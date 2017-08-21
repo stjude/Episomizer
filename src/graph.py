@@ -70,10 +70,14 @@ def draw_graph(graph):
     Return:
         None
     """
-    nx.draw(graph)
+    #nx.draw(graph)
     nx.draw_circular(graph)
+    #nx.draw_spectral(graph)
     plt.show()
     return
+
+
+
 
 
 def main():

@@ -41,7 +41,7 @@ def circRNA():
     simple_paths = path.find_simple_paths(dg, s_node, t_node)
     filtered_sps = path.filter_jump_paths(simple_paths)
     for sp in filtered_sps:
-        print(sp)
+        path.draw_simple_path(dg, sp)
     return
 
 

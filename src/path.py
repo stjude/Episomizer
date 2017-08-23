@@ -23,13 +23,17 @@ def find_simple_paths(graph, s_node, t_node):
 
 
 def draw_simple_path(graph, sp):
-    """ Draw a simple path.
+    """ Draw a simple path or cycle.
     Args:
-        sp (list): a simple path or cycle
+        graph (obj): a networkx graph
+        sp (list): a simple path
     Returns:
         None
     """
-    
+    for node in sp[:-1]:
+        print(node, end='')
+        print('--->')
+    print(sp[-1])
     return
 
 

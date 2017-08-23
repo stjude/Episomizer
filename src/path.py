@@ -30,10 +30,17 @@ def draw_simple_path(graph, sp):
     Returns:
         None
     """
-    for node in sp[:-1]:
+    for index, node in enumerate(sp[:-1]):
         print(node, end='')
-        print('--->')
-    print(sp[-1])
+        if node[:-1] == sp[index+1][:-1]:
+            print(' ==> ', end='')      # segment edge
+        else:
+            print(' -', end='')      # non-segment edge
+            print(graph[node][sp[index+1]]['type'][0], end='')
+            print('-> ', end='')
+        #if (index + 1) % 10 == 0:
+        #    print()
+    print(sp[-1] + '\n')
     return
 
 
@@ -75,6 +82,14 @@ def filter_jump_paths(simple_paths):
         if valid_sc:
             filter_scs.append(sc)
     return filter_scs
+
+
+def rm_dup_path():
+    """ Remove duplicate paths (reverse directory) from a list of paths.
+    Returns:
+        None
+    """
+    return
 
 
 def main():

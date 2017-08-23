@@ -27,14 +27,15 @@ def circRNA():
         Returns:
             None
     """
-    graph_text = '../inputs/edges_for_graph_S.txt'
+    graph_text = '../inputs/edges_for_graph_S_full.txt'
     dg = graph.build_graph(graph_text)
+    graph.to_sig(dg)
     #graph.draw_graph(dg)
     simple_cycles = cycle.find_simple_cycles(dg)
     filtered_scs = path.filter_jump_paths(simple_cycles)
     for sc in filtered_scs:
-        print(sc)
-    print
+        path.draw_simple_path(dg, sc)
+    print()
 
     s_node = '6L'
     t_node = '7L'

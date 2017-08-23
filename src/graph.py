@@ -35,13 +35,32 @@ def build_graph(graph_text):
     for i in range(0, num_vertices):
         dg.add_node(str(i+1) + 'L')
         dg.add_node(str(i+1) + 'R')
-        dg.add_edge(str(i+1) + 'L', str(i+1) + 'R')
-        dg.add_edge(str(i+1) + 'R', str(i+1) + 'L')
+        dg.add_edge(str(i+1) + 'L', str(i+1) + 'R', type='segment')
+        dg.add_edge(str(i+1) + 'R', str(i+1) + 'L', type='segment')
     # Add non-segment edges
     for e in edge_lst:
-        dg.add_edge(e[0], e[1], type=e[4])
-        dg.add_edge(e[1], e[0], type=e[4])
+        dg.add_edge(e[0], e[1], type=e[5])
+        dg.add_edge(e[1], e[0], type=e[5])
     return dg
+
+
+def to_sig(graph):
+    """ Convert networkx graph to sig format.
+    Args:
+        graph (obj): a networkx graph object
+    Return:
+        A sig file
+    """
+    edge_set = set()
+    with open('test.sif', 'w') as fout:
+        for e in graph.edges(data='type'):
+            edge_str = e[0] + ' ' + e[2] + ' ' + e[1]
+            if edge_str not in edge_set:
+                fout.write(edge_str + '\n')
+            edge_set.add(edge_str)
+            reverse_edge_str = e[1] + ' ' + e[2] + ' ' + e[0]
+            edge_set.add(reverse_edge_str)
+    return
 
 
 def print_graph(graph, verbose):

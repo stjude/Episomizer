@@ -27,7 +27,7 @@ def build_graph(graph_text):
             line = fin.readline().rstrip()
             if not line:
                 break
-            edge_lst.append(tuple([ v for v in line.split('\t')]))
+            edge_lst.append(tuple([v for v in line.split('\t')]))
 
     # Create networkx graph object
     dg = nx.DiGraph()
@@ -39,8 +39,8 @@ def build_graph(graph_text):
         dg.add_edge(str(i+1) + 'R', str(i+1) + 'L')
     # Add non-segment edges
     for e in edge_lst:
-        dg.add_edge(e[0], e[1])
-        dg.add_edge(e[1], e[0])
+        dg.add_edge(e[0], e[1], type=e[4])
+        dg.add_edge(e[1], e[0], type=e[4])
     return dg
 
 
@@ -75,9 +75,6 @@ def draw_graph(graph):
     #nx.draw_spectral(graph)
     plt.show()
     return
-
-
-
 
 
 def main():

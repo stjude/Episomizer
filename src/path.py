@@ -22,12 +22,15 @@ def find_simple_paths(graph, s_node, t_node):
     return list(nx.all_simple_paths(graph, source=s_node, target=t_node))
 
 
-def draw_simple_path(sp):
+def draw_simple_path(graph, sp):
+    """ Draw a simple path.
+    Args:
+        sp (list): a simple path or cycle
+    Returns:
+        None
     """
-
-    :param sp:
-    :return:
-    """
+    
+    return
 
 
 def filter_jump_paths(simple_paths):

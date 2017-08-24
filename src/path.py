@@ -30,17 +30,24 @@ def draw_simple_path(graph, sp):
     Returns:
         None
     """
+    in_segment = False
     for index, node in enumerate(sp[:-1]):
-        print(node, end='')
-        if node[:-1] == sp[index+1][:-1]:
-            print(' ==> ', end='')      # segment edge
+        if in_segment:
+            print(node[-1], end='')
         else:
-            print(' -', end='')      # non-segment edge
+            print(node, end='')
+        if node[:-1] == sp[index+1][:-1]:
+            print('', end='')       # segment edge
+            in_segment = True       # next node is in segment
+        else:
+            print(' -', end='')     # non-segment edge
             print(graph[node][sp[index+1]]['type'][0], end='')
             print('-> ', end='')
-        #if (index + 1) % 10 == 0:
-        #    print()
-    print(sp[-1] + '\n')
+            in_segment = False      # next node is not in segment
+    if sp[-1][:-1] == sp[-2][:-1]:
+        print(sp[-1][-1] + '\n')
+    else:
+        print(sp[-1] + '\n')
     return
 
 

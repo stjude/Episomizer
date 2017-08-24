@@ -96,6 +96,20 @@ def draw_graph(graph):
     return
 
 
+def find_dangling_nodes(graph):
+    """ Find nodes that have only segment edges.
+    Args:
+        graph (obj): a networkx graph object
+    Returns:
+        a list of dangling nodes
+    """
+    dangling_lst = []
+    for node in graph.nodes():
+        if len(graph[node]) == 1:
+            dangling_lst.append(node)
+    return dangling_lst
+
+
 def main():
     return
 

@@ -37,13 +37,6 @@ def print_simple_cycles(simple_cycles):
     return
 
 
-def draw_simple_cycle(sc):
-    """ Draw a simple cycle.
-    """
-
-    return
-
-
 def main():
     return
 

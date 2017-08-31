@@ -11,7 +11,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 
-def build_graph(graph_text):
+def build_graph(non_segment_file, segment_file):
     """ Read a text file with number of nodes and edges. Create a networkx bidirectional graph.
         Args:
             graph_text (str): a text file with the first line number of vertices. The rest
@@ -20,31 +20,36 @@ def build_graph(graph_text):
             A networkx graph object.
     """
     # Read graph text file
-    edge_lst = []
-    with open(graph_text, 'r') as fin:
-        num_vertices = int(fin.readline().rstrip())
+    non_segment_edges = []
+    with open(non_segment_file, 'r') as fin:
         while True:
             line = fin.readline().rstrip()
             if not line:
                 break
-            edge_lst.append(tuple([v for v in line.split('\t')]))
+            non_segment_edges.append(tuple([v for v in line.split('\t')]))
 
     # Create networkx graph object
     dg = nx.DiGraph()
     # Add two nodes for every segment; add segment edges
-    for i in range(0, num_vertices):
-        dg.add_node(str(i+1) + 'L')
-        dg.add_node(str(i+1) + 'R')
-        dg.add_edge(str(i+1) + 'L', str(i+1) + 'R', type='segment')
-        dg.add_edge(str(i+1) + 'R', str(i+1) + 'L', type='segment')
+    with open(segment_file, 'r') as fin:
+        while True:
+            line = fin.readline().rstrip()
+            if not line:
+                break
+            tokens = line.split('\t')
+            dg.add_node(tokens[0])
+            dg.add_node(tokens[1])
+            dg.add_edge(tokens[0], tokens[1], type='segment')
+            dg.add_edge(tokens[1], tokens[0], type='segment')
+
     # Add non-segment edges
-    for e in edge_lst:
+    for e in non_segment_edges:
         dg.add_edge(e[0], e[1], type=e[5])
         dg.add_edge(e[1], e[0], type=e[5])
     return dg
 
 
-def to_sig(graph):
+def to_sif(graph, sif_file):
     """ Convert networkx graph to sig format.
     Args:
         graph (obj): a networkx graph object
@@ -52,7 +57,7 @@ def to_sig(graph):
         A sig file
     """
     edge_set = set()
-    with open('test.sif', 'w') as fout:
+    with open(sif_file, 'w') as fout:
         for e in graph.edges(data='type'):
             edge_str = e[0] + ' ' + e[2] + ' ' + e[1]
             if edge_str not in edge_set:
@@ -105,8 +110,12 @@ def find_dangling_nodes(graph):
     """
     dangling_lst = []
     for node in graph.nodes():
-        if len(graph[node]) == 1:
+        if len(graph[node]) == 1:   # nodes with only one edge (must be segment)
             dangling_lst.append(node)
+        #elif len(graph[node]) == 2: # nodes with
+        #    for pair_node in graph[node]:
+        #        if(graph[node][pair_node]['type']) == 'adjacent':
+        #            dangling_lst.append(node)
     return dangling_lst
 
 

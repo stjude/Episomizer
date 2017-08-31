@@ -1,5 +1,4 @@
 1L segment 1R
-1L rescuedsoftclip 20.5R
 1R adjacent 2L
 2L segment 2R
 2L rescuedsoftclip 29R
@@ -11,12 +10,11 @@
 4L softclip 25R
 4R adjacent 5L
 5L segment 5R
-5L rescuedsoftclip 23.5L
 5R adjacent 6L
 5R discordant 43R
 6L segment 6R
 6R adjacent 7L
-6R shareddiscordant 40R
+6R bshareddiscordant 40R
 7L segment 7R
 7R adjacent 8L
 8L segment 8R
@@ -26,7 +24,7 @@
 9R adjacent 10L
 10L segment 10R
 10R adjacent 11L
-10R shareddiscordant 43L
+10R bshareddiscordant 43L
 11L segment 11R
 11R adjacent 12L
 12L segment 12R
@@ -35,7 +33,7 @@
 13L segment 13R
 13R adjacent 14L
 13R softclip 15L
-13R shareddiscordant 24L
+13R bshareddiscordant 24L
 14L segment 14R
 14R adjacent 15L
 15L segment 15R
@@ -45,7 +43,7 @@
 16R softclip 17L
 17L segment 17R
 17R adjacent 18L
-17R shareddiscordantmodified17R 38R
+17R bshareddiscordantmodified17R 38R
 18L segment 18R
 18R adjacent 19L
 19L segment 19R
@@ -53,8 +51,6 @@
 19R adjacent 20L
 19R discordant 24R
 20L segment 20R
-20R manual 20.5L
-20.5L segment 20.5R
 21L segment 21R
 21L softclip 44R
 21R adjacent 22L
@@ -62,9 +58,7 @@
 22L segment 22R
 22R softclip 36R
 23L segment 23R
-23R shareddiscordant 33L
-23.5L segment 23.5R
-23.5R rescuedshareddiscordant 27L
+23R bshareddiscordant 33L
 24L segment 24R
 25L segment 25R
 26L segment 26R
@@ -73,7 +67,7 @@
 28L softclip 32R
 28R adjacent 29L
 29L segment 29R
-29L shareddiscordant 35R
+29L bshareddiscordant 35R
 29R adjacent 30L
 30L segment 30R
 30R adjacent 31L
@@ -104,4 +98,4 @@
 42R adjacent 43L
 43L segment 43R
 43R adjacent 44L
-44L shareddiscordantduetoepisome 5 44R
+44L segment 44R

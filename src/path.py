@@ -30,6 +30,7 @@ def draw_simple_path(graph, sp):
     Returns:
         None
     """
+
     in_segment = False
     for index, node in enumerate(sp[:-1]):
         if in_segment:
@@ -62,9 +63,9 @@ def filter_jump_paths(simple_paths):
     for sc in simple_paths:
         valid_sc = True
         for i in range(0, len(sc) - 2):
-            node1 = int(sc[i][:-1])
-            node2 = int(sc[i + 1][:-1])
-            node3 = int(sc[i + 2][:-1])
+            node1 = sc[i][:-1]
+            node2 = sc[i + 1][:-1]
+            node3 = sc[i + 2][:-1]
             # Filter jump in the middle of a simple cycle
             # There should not be 3 consecutive different nodes
             if node1 != node2 and node2 != node3:
@@ -72,10 +73,10 @@ def filter_jump_paths(simple_paths):
                 break
 
         # Filter jump at the end of a sc
-        first = int(sc[0][:-1])
-        second = int(sc[1][:-1])
-        last = int(sc[-1][:-1])
-        second_last = int(sc[-2][:-1])
+        first = sc[0][:-1]
+        second = sc[1][:-1]
+        last = sc[-1][:-1]
+        second_last = sc[-2][:-1]
         if last == second_last:
             if first != second:
                 valid_sc = False
@@ -91,12 +92,19 @@ def filter_jump_paths(simple_paths):
     return filter_scs
 
 
-def rm_dup_path():
-    """ Remove duplicate paths (reverse directory) from a list of paths.
+def rm_reverse_paths(simple_paths):
+    """ Remove reverse cycles/paths from a list of cycles/paths.
+        Note: Assume a path and its reverse one are next to each other in the input list!
+    Args:
+        simple_paths (list): a list of simple paths
     Returns:
-        None
+        List: left paths
     """
-    return
+    left_paths = []
+    for i in range(0, len(simple_paths)):
+        if i % 2 == 1:
+            left_paths.append(simple_paths[i])
+    return left_paths
 
 
 def main():

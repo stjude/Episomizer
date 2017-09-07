@@ -20,12 +20,12 @@ import path
 def main():
     """ Program gate and argument handler.
     """
-    #circRNA()
-    linearRNA()
+    circDNA()
+    #linearDNA()
     return
 
 
-def circRNA():
+def circDNA():
     """ Driver function to detect circular DNA.
     """
     non_segment_file = '../inputs/edges_for_graph_E.txt'
@@ -38,8 +38,8 @@ def circRNA():
     return
 
 
-def linearRNA():
-    """ Driver function to detect linear DNA.
+def linearDNA():
+    """ Driver function to find linear DNAs.
     """
     non_segment_file = '../inputs/edges_for_graph_E_linear.txt'
     segment_file = '../inputs/edges_for_graph_E_segments_linear.txt'

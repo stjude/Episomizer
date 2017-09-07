@@ -16,7 +16,7 @@ def find_simple_cycles(dg):
         Args:
             dg (obj): a networkx graph
         Return:
-            A list of all simple cycles.
+            simple_cycles (list): a list of all simple cycles.
     """
     simple_cycles = [c for c in nx.simple_cycles(dg) if len(c) > 2]
     simple_cycles.sort(key=lambda cycle: len(cycle), reverse=True)

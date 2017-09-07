@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 def build_graph(non_segment_file, segment_file):
     """ Read a text file with number of nodes and edges. Create a networkx bidirectional graph.
         Args:
-            graph_text (str): a text file with the first line number of vertices. The rest
-            of lines are edges with one edge per line.
+            non_segment_file (str): a text file with non-segment edges.
+            segment_file (str): a text file with segment edges.
         Return:
             A networkx graph object.
     """

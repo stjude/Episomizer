@@ -30,7 +30,9 @@ def draw_simple_path(graph, sp):
     Returns:
         None
     """
-
+    if sp[0][:-1] == sp[1][:-1]:    # First two nodes form a segment edge
+        first_node = sp.pop(0)
+        sp.append(first_node)
     in_segment = False
     for index, node in enumerate(sp[:-1]):
         if in_segment:

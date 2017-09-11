@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
-Python version: 2.7.13
+Python version: 3.6
 Author: Liang Ding
 Date: 8/9/2017
 

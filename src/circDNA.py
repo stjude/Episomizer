@@ -1,8 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
-Python version: 2.7.13
-Note: this is written to be compatible with python3. But networkx draw does not support
-python3 very well. Suggest running in python2.
+Python version: 3.6
 
 Author: Liang Ding
 Date: 8/18/2017
@@ -33,7 +31,6 @@ def circDNA():
     dg = graph.build_graph(non_segment_file, segment_file)
     sif_file = '../outputs/edges_for_graph_E.sif'
     graph.to_sif(dg, sif_file)
-    #graph.draw_graph(dg)
     find_circ_DNA(dg)
     return
 

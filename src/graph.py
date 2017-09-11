@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
-Python version: 2.7.13
+Python version: 3.6
 Author: Liang Ding
 Date: 8/18/2017
 
@@ -84,20 +84,6 @@ def print_graph(graph, verbose):
     if verbose:
         print(graph.edges())
         print('\n')
-    return
-
-
-def draw_graph(graph):
-    """ Draw networkx graph with Matplotlib.
-    Args:
-        graph (object): a networkx graph.
-    Return:
-        None
-    """
-    #nx.draw(graph)
-    nx.draw_circular(graph)
-    #nx.draw_spectral(graph)
-    plt.show()
     return
 
 

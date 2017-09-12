@@ -18,8 +18,8 @@ import path
 def main():
     """ Program gate and argument handler.
     """
-    circDNA()
-    #linearDNA()
+    #circDNA()
+    linearDNA()
     return
 
 
@@ -59,7 +59,7 @@ def find_circ_DNA(dg):
     left_scs = path.rm_reverse_paths(filtered_scs)
     print('Number of cycles: ' + str(len(left_scs)))
     for sc in left_scs:
-        path.draw_simple_path(dg, sc)
+        path.print_simple_path(dg, sc)
     return left_scs
 
 
@@ -72,8 +72,8 @@ def find_linear_DNA(dg):
     """
     # Find all dangling nodes
     dangling_nodes = graph.find_dangling_nodes(dg)
-    dangling_nodes.append('5L')
-    print('Dangling nodes: ', end='')
+    print(dangling_nodes)
+    '''print('Dangling nodes: ', end='')
     for node in dangling_nodes:
         print(node + ' ', end='')
     print()
@@ -84,7 +84,7 @@ def find_linear_DNA(dg):
         simple_paths = path.find_simple_paths(dg, n_pair[0], n_pair[1])
         filtered_sps = path.filter_jump_paths(simple_paths)
         for sp in filtered_sps:
-            path.draw_simple_path(dg, sp)
+            path.print_simple_path(dg, sp)'''
     return
 
 

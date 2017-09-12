@@ -22,8 +22,8 @@ def find_simple_paths(graph, s_node, t_node):
     return list(nx.all_simple_paths(graph, source=s_node, target=t_node))
 
 
-def draw_simple_path(graph, sp):
-    """ Draw a simple path or cycle.
+def print_simple_path(graph, sp):
+    """ Print a simple path or cycle.
     Args:
         graph (obj): a networkx graph
         sp (list): a simple path

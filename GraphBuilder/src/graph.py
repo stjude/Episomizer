@@ -109,10 +109,10 @@ def find_dangling_nodes(graph):
             node2_2 = connect_nodes[1]
             is_keep = False     # Keep nodes with a SEG edge and a A edge
             node2_seg = ''
-            if graph[node1][node2_1]['type'] == 'SEG' or graph[node1][node2_2] == 'A':
+            if graph[node1][node2_1]['type'] == 'SEG' and graph[node1][node2_2]['type'] == 'A':
                 is_keep = True
                 node2_seg = node2_1
-            elif graph[node1][node2_2]['type'] == 'SEG' or graph[node1][node2_1] == 'A':
+            elif graph[node1][node2_2]['type'] == 'SEG' and graph[node1][node2_1]['type'] == 'A':
                 is_keep = True
                 node2_seg = node2_2
             if is_keep:

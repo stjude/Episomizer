@@ -1,4 +1,3 @@
-29
 8R	9L	789	789	1578	adjacent
 9R	10L	750	749	1499	adjacent
 9R	19L	663	597	1260	softclip

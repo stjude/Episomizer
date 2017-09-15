@@ -30,9 +30,6 @@ def print_simple_path(graph, sp):
     Returns:
         None
     """
-    if sp[0][:-1] == sp[1][:-1]:    # First two nodes form a segment edge
-        first_node = sp.pop(0)
-        sp.append(first_node)
     in_segment = False
     for index, node in enumerate(sp[:-1]):
         if in_segment:
@@ -44,7 +41,7 @@ def print_simple_path(graph, sp):
             in_segment = True       # next node is in segment
         else:
             print(' -', end='')     # non-segment edge
-            print(graph[node][sp[index+1]]['type'][0], end='')
+            print(graph[node][sp[index+1]]['type'][0].lower(), end='')
             print('-> ', end='')
             in_segment = False      # next node is not in segment
     if sp[-1][:-1] == sp[-2][:-1]:

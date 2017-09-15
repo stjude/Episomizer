@@ -18,18 +18,18 @@ import path
 def main():
     """ Program gate and argument handler.
     """
-    #circDNA()
-    linearDNA()
+    circDNA()
+    #linearDNA()
     return
 
 
 def circDNA():
     """ Driver function to detect circular DNA.
     """
-    non_segment_file = '../inputs/edges_for_graph_E.txt'
-    segment_file = '../inputs/edges_for_graph_E_segments.txt'
+    non_segment_file = '../inputs/edges_for_graph_S_full.txt'
+    segment_file = '../inputs/edges_for_graph_S_segments.txt'
     dg = graph.build_graph(non_segment_file, segment_file)
-    sif_file = '../outputs/edges_for_graph_E.sif'
+    sif_file = '../outputs/edges_for_graph_S.sif'
     graph.to_sif(dg, sif_file)
     find_circ_DNA(dg)
     return
@@ -59,7 +59,7 @@ def find_circ_DNA(dg):
     left_scs = path.rm_reverse_paths(filtered_scs)
     print('Number of cycles: ' + str(len(left_scs)))
     for sc in left_scs:
-        path.print_simple_path(dg, sc)
+        cycle.print_simple_cycle(dg, sc)
     return left_scs
 
 
@@ -72,11 +72,10 @@ def find_linear_DNA(dg):
     """
     # Find all dangling nodes
     dangling_nodes = graph.find_dangling_nodes(dg)
-    print(dangling_nodes)
-    '''print('Dangling nodes: ', end='')
+    print('Dangling nodes: ', end='')
     for node in dangling_nodes:
         print(node + ' ', end='')
-    print()
+    print('')
 
     # Find all simple paths from a source to a destination
     for n_pair in itertools.combinations(dangling_nodes, 2):
@@ -84,7 +83,7 @@ def find_linear_DNA(dg):
         simple_paths = path.find_simple_paths(dg, n_pair[0], n_pair[1])
         filtered_sps = path.filter_jump_paths(simple_paths)
         for sp in filtered_sps:
-            path.print_simple_path(dg, sp)'''
+            path.print_simple_path(dg, sp)
     return
 
 

@@ -8,16 +8,20 @@ This module constructs a networkx graph.
 """
 
 import networkx as nx
-import matplotlib.pyplot as plt
 
 
-def build_graph(non_segment_file, segment_file):
+def build_graph(non_segment_file, segment_file, **kwargs):
     """ Read a text file with number of nodes and edges. Create a networkx bidirectional graph.
         Args:
-            non_segment_file (str): a text file with non-segment edges.
-            segment_file (str): a text file with segment edges.
+            Required arguments:
+                non_segment_file (str): a text file with non-segment edges.
+                segment_file (str): a text file with segment edges.
+            optional keyword arguments:
+                segment_attribute_file (str): a file with LogRatios and lengths for segment edges.
         Return:
-            A networkx graph object.
+            obj: a networkx graph object.
+                (edge attribute: type; segment edge attributes: Length and LogRatio)
+
     """
     # Read graph text file
     non_segment_edges = []
@@ -46,6 +50,22 @@ def build_graph(non_segment_file, segment_file):
     for e in non_segment_edges:
         dg.add_edge(e[0], e[1], type=e[5])
         dg.add_edge(e[1], e[0], type=e[5])
+
+    if 'segment_attribute_file' in kwargs:
+        with open(kwargs['segment_attribute_file']) as fin:
+            fin.readline()
+            while True:
+                line = fin.readline().rstrip()
+                if not line:
+                    break
+                tokens = line.split('\t')
+                segment = tokens[0]
+                log_ratio = float(tokens[2])
+                length = int(tokens[3])
+                dg[segment + 'L'][segment + 'R']['LogRatio'] = log_ratio
+                dg[segment + 'R'][segment + 'L']['LogRatio'] = log_ratio
+                dg[segment + 'L'][segment + 'R']['Length'] = length
+                dg[segment + 'R'][segment + 'L']['Length'] = length
     return dg
 
 

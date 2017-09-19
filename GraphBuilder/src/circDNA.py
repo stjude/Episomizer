@@ -26,12 +26,25 @@ def main():
 def circDNA():
     """ Driver function to detect circular DNA.
     """
+    # Build a directed graph
     non_segment_file = '../inputs/edges_for_graph_S_full.txt'
     segment_file = '../inputs/edges_for_graph_S_segments.txt'
-    dg = graph.build_graph(non_segment_file, segment_file)
+    segment_attribute_file = '../inputs/noCREST_copygain_LR3_details.txt'
+
+    #non_segment_file = '../inputs/edges_for_graph_E.txt'
+    #segment_file = '../inputs/edges_for_graph_E_segments.txt'
+    #segment_attribute_file = '../input/E_copygain_LR3_details.txt'
+
+    dg = graph.build_graph(non_segment_file, segment_file, segment_attribute_file=segment_attribute_file)
+
     sif_file = '../outputs/edges_for_graph_S.sif'
     graph.to_sif(dg, sif_file)
-    find_circ_DNA(dg)
+    left_scs = find_circ_DNA(dg)
+    sc_dic = dict()
+    for index, sc in enumerate(left_scs):
+        sc_dic[str(sc)] = index + 1
+    covers = cycle.find_cycle_covers(dg, left_scs)
+    cycle.print_cycle_cover(covers, sc_dic)
     return
 
 
@@ -58,7 +71,8 @@ def find_circ_DNA(dg):
     filtered_scs = path.filter_jump_paths(simple_cycles)
     left_scs = path.rm_reverse_paths(filtered_scs)
     print('Number of cycles: ' + str(len(left_scs)))
-    for sc in left_scs:
+    for index, sc in enumerate(left_scs):
+        print('Cycle ' + str(index+1))
         cycle.print_simple_cycle(dg, sc)
     return left_scs
 

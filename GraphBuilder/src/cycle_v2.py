@@ -10,12 +10,9 @@ Different with version 1, this version uses two vertices to represent a segment.
 
 import networkx as nx
 import itertools
-<<<<<<< 5bf16e0b516ad4a4a94723b2187c5331a51dbe0e
-=======
 from scipy.stats.stats import pearsonr
 
 import util
->>>>>>> add function to get best cycle cover using pearsonr
 
 
 def find_simple_cycles(dg):
@@ -99,7 +96,6 @@ def find_cycle_covers(graph, cycles):
             if len(node_set) == num_nodes:
                 covers.append(cb)
     return covers
-<<<<<<< 5bf16e0b516ad4a4a94723b2187c5331a51dbe0e
 
 
 def print_cycle_cover(covers, sc_dic):
@@ -113,7 +109,6 @@ def print_cycle_cover(covers, sc_dic):
         for cycle in co:
             print(sc_dic[str(cycle)], end=' ')
         print()
-=======
 
 
 def print_cycle_covers(covers, sc_dic):
@@ -137,7 +132,6 @@ def print_cycle_cover(cover, sc_dic):
     for cycle in cover:
         print(sc_dic[str(cycle)], end=' ')
     print()
->>>>>>> add function to get best cycle cover using pearsonr
     return
 
 

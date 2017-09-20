@@ -27,18 +27,12 @@ def circDNA():
     """ Driver function to detect circular DNA.
     """
     # Build a directed graph
-<<<<<<< 5bf16e0b516ad4a4a94723b2187c5331a51dbe0e
-=======
     # Relapse sample
->>>>>>> add function to get best cycle cover using pearsonr
     non_segment_file = '../inputs/edges_for_graph_S_full.txt'
     segment_file = '../inputs/edges_for_graph_S_segments.txt'
     segment_attribute_file = '../inputs/noCREST_copygain_LR3_details.txt'
 
-<<<<<<< 5bf16e0b516ad4a4a94723b2187c5331a51dbe0e
-=======
     # Diagnosis sample
->>>>>>> add function to get best cycle cover using pearsonr
     #non_segment_file = '../inputs/edges_for_graph_E.txt'
     #segment_file = '../inputs/edges_for_graph_E_segments.txt'
     #segment_attribute_file = '../input/E_copygain_LR3_details.txt'
@@ -52,9 +46,6 @@ def circDNA():
     for index, sc in enumerate(left_scs):
         sc_dic[str(sc)] = index + 1
     covers = cycle.find_cycle_covers(dg, left_scs)
-<<<<<<< 5bf16e0b516ad4a4a94723b2187c5331a51dbe0e
-    cycle.print_cycle_cover(covers, sc_dic)
-=======
     cycle.print_cycle_covers(covers, sc_dic)
     print()
 
@@ -70,7 +61,6 @@ def circDNA():
     print(best_tuple[3])
     print('\nP-value: ')
     print(best_tuple[4])
->>>>>>> add function to get best cycle cover using pearsonr
     return
 
 

@@ -194,7 +194,7 @@ def best_cover_pearsonr(covers, max_abundance, segment_attribute_file):
     best_cover = []
     best_product = ()
     best_segment_count_lst = []
-    for cover in covers[:1]:    # iterate over all covers
+    for cover in covers:    # iterate over all covers
         for (product, segment_count_lst) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
             (pearson_cc, p_value) = pearsonr(logratio_lst, segment_count_lst)
             if pearson_cc > largest_pearsonr:

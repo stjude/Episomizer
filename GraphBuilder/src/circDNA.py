@@ -49,7 +49,7 @@ def circDNA():
     cycle.print_cycle_covers(covers, sc_dic)
     print()
 
-    max_abundance = 15
+    max_abundance = 5
     best_tuple = cycle.best_cover_pearsonr(covers, max_abundance, segment_attribute_file)
     print('\nBest cycle cover: ')
     cycle.print_cycle_cover(best_tuple[0], sc_dic)

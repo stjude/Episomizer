@@ -1,0 +1,70 @@
+Number of cycles: 7
+Cycle 1
+7R -a-> 8LR -a-> 9LR -s-> 19LR -a-> 20LR -s-> 29RL -a-> 28RL -d-> 25RL -a-> 24RL -s-> 16RL -a-> 15RL -a-> 14RL -s-> 5RL -a-> 4RL -s-> 11LR -a-> 12LR -s-> 2RL -s-> 1LR -s-> 3LR -s-> 6RL -b-> 7L
+Length: 1887200
+
+Cycle 2
+7R -a-> 8LR -a-> 9LR -a-> 10LR -s-> 14RL -s-> 5RL -a-> 4RL -s-> 11LR -a-> 12LR -s-> 2RL -s-> 1LR -s-> 3LR -s-> 6RL -b-> 7L
+Length: 718700
+
+Cycle 3
+23L -a-> 22RL -a-> 21RL -a-> 20RL -a-> 19RL -s-> 9RL -s-> 27RL -a-> 26RL -a-> 25RL -a-> 24RL -a-> 23R
+Length: 825900
+
+Cycle 4
+20L -a-> 19RL -s-> 9RL -s-> 27RL -s-> 16LR -s-> 24LR -a-> 25LR -d-> 28LR -a-> 29LR -s-> 20R
+Length: 953700
+
+Cycle 5
+9L -s-> 27RL -s-> 16LR -a-> 17LR -s-> 18LR -m-> 13LR -a-> 14LR -s-> 10RL -a-> 9R
+Length: 630100
+
+Cycle 6
+9L -s-> 27RL -a-> 26RL -a-> 25RL -s-> 22LR -s-> 19RL -s-> 9R
+Length: 376100
+
+Cycle 7
+17L -a-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -m-> 18RL -s-> 17R
+Length: 725100
+
+Cover 1: 1 3 5 
+Cover 2: 1 2 3 5 
+Cover 3: 1 2 3 7 
+Cover 4: 1 3 4 5 
+Cover 5: 1 3 5 6 
+Cover 6: 1 3 5 7 
+Cover 7: 2 3 4 7 
+Cover 8: 1 2 3 4 5 
+Cover 9: 1 2 3 4 7 
+Cover 10: 1 2 3 5 6 
+Cover 11: 1 2 3 5 7 
+Cover 12: 1 2 3 6 7 
+Cover 13: 1 3 4 5 6 
+Cover 14: 1 3 4 5 7 
+Cover 15: 1 3 5 6 7 
+Cover 16: 2 3 4 5 7 
+Cover 17: 2 3 4 6 7 
+Cover 18: 1 2 3 4 5 6 
+Cover 19: 1 2 3 4 5 7 
+Cover 20: 1 2 3 4 6 7 
+Cover 21: 1 2 3 5 6 7 
+Cover 22: 1 3 4 5 6 7 
+Cover 23: 2 3 4 5 6 7 
+Cover 24: 1 2 3 4 5 6 7 
+
+'best_cover_pearsonr' 26.83 sec
+
+Best cycle cover: 
+1 3 4 5 6 7 
+
+Best product: 
+(1, 3, 2, 1, 2, 5)
+
+Best segment count list: 
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 9.0, 1.0, 1.0, 1.0, 6.0, 7.0, 6.0, 9.0, 6.0, 6.0, 8.0, 6.0, 3.0, 5.0, 3.0, 6.0, 8.0, 5.0, 8.0, 3.0, 3.0]
+
+Pearson correlation coefficient: 
+0.984499805202
+
+P-value: 
+5.97570383788e-22

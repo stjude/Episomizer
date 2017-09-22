@@ -10,7 +10,9 @@ Different with version 1, this version uses two vertices to represent a segment.
 
 import networkx as nx
 import itertools
+import math
 from scipy.stats.stats import pearsonr
+from scipy.spatial.distance import euclidean
 
 import util
 
@@ -171,7 +173,7 @@ def cycle_abundance(cover, max_abundance):
 
 
 @util.timeit
-def best_cover_pearsonr(covers, max_abundance, segment_attribute_file, **kwargs):
+def best_cover(covers, max_abundance, segment_attribute_file, **kwargs):
     """ Return the best cycle cover and cycle abundance by calculating the largest
         Pearson correlation coefficient of segment counts and LogRatios for every
         cycle abundance in a cover.
@@ -190,6 +192,7 @@ def best_cover_pearsonr(covers, max_abundance, segment_attribute_file, **kwargs)
     verbose = kwargs.pop('verbose', None)
     sc_dic = kwargs.pop('sc_dic', None)
     logratio_lst = []
+    ratio_lst = []
     with open(segment_attribute_file, 'r') as fin:
         fin.readline()
         while True:
@@ -197,10 +200,11 @@ def best_cover_pearsonr(covers, max_abundance, segment_attribute_file, **kwargs)
             if not line:
                 break
             logratio_lst.append(float(line.split('\t')[2]))
+            ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
 
     if verbose:
-        fout = open('../temp/covers_5_log.txt', 'w')
-        fout.write('cover\tcycle_abundance\tpearsonr\tpvalue\n')
+        fout = open('../temp/covers_5_pow2.txt', 'w')
+        fout.write('cover\tcycle_abundance\tpearsonr\tpvalue\teu_distance\n')
 
     largest_pearsonr = -1.0
     best_p_value = 0.0
@@ -209,18 +213,21 @@ def best_cover_pearsonr(covers, max_abundance, segment_attribute_file, **kwargs)
     best_segment_count_lst = []
     for cover in covers:    # iterate over all covers
         for (product, segment_count_lst) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
-            (pearson_cc, p_value) = pearsonr(logratio_lst, segment_count_lst)
+            (pearson_cc, p_value) = pearsonr(ratio_lst, segment_count_lst)
+            eu_distance = euclidean(ratio_lst, segment_count_lst)
             if verbose:
                 fout.write(cycle_cover_to_string(cover, sc_dic) + '\t')
                 fout.write(str(product) + '\t')
                 fout.write(str(pearson_cc) + '\t')
-                fout.write(str(p_value) + '\n')
+                fout.write(str(p_value) + '\t')
+                fout.write(str(eu_distance) + '\n')
             if pearson_cc > largest_pearsonr:
                 largest_pearsonr = pearson_cc
                 best_p_value = p_value
                 best_cover = cover
                 best_product = product
                 best_segment_count_lst = segment_count_lst
+            #break
 
     if verbose:
         fout.close()

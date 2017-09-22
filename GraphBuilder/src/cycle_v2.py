@@ -199,12 +199,12 @@ def best_cover(covers, max_abundance, segment_attribute_file, **kwargs):
             line = fin.readline().rstrip()
             if not line:
                 break
-            logratio_lst.append(float(line.split('\t')[2]))
+            #logratio_lst.append(float(line.split('\t')[2]))
             ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
 
     if verbose:
-        fout = open('../temp/covers_5_pow2.txt', 'w')
-        fout.write('cover\tcycle_abundance\tpearsonr\tpvalue\teu_distance\n')
+        fout = open('/home/lding/Documents/Projects/circDNA/covers_10_pow2.txt', 'w')
+        fout.write('cover\tcycle_abundance\tpearsonr\tpvalue\n')
 
     largest_pearsonr = -1.0
     best_p_value = 0.0
@@ -214,13 +214,13 @@ def best_cover(covers, max_abundance, segment_attribute_file, **kwargs):
     for cover in covers:    # iterate over all covers
         for (product, segment_count_lst) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
             (pearson_cc, p_value) = pearsonr(ratio_lst, segment_count_lst)
-            eu_distance = euclidean(ratio_lst, segment_count_lst)
+            #eu_distance = euclidean(ratio_lst, segment_count_lst)
             if verbose:
                 fout.write(cycle_cover_to_string(cover, sc_dic) + '\t')
                 fout.write(str(product) + '\t')
                 fout.write(str(pearson_cc) + '\t')
-                fout.write(str(p_value) + '\t')
-                fout.write(str(eu_distance) + '\n')
+                fout.write(str(p_value) + '\n')
+                #fout.write(str(eu_distance) + '\n')
             if pearson_cc > largest_pearsonr:
                 largest_pearsonr = pearson_cc
                 best_p_value = p_value

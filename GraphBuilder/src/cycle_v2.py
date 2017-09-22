@@ -111,28 +111,34 @@ def print_cycle_cover(covers, sc_dic):
         print()
 
 
-def print_cycle_covers(covers, sc_dic):
-    """ Print cycle covers.
+def cycle_covers_to_string(covers, sc_dic):
+    """ Cycle covers to strings.
     Args:
         covers (str): cycle covers.
         sc_dic (dict): dictionary that maps simple cycle index number to simple cycle.
+    Returns:
+        to_string (str): string representation of cycle covers
     """
+    to_string = ''
     for index, co in enumerate(covers):
-        print('Cover ' + str(index+1) + ': ', end='')
-        print_cycle_cover(co, sc_dic)
-    return
+        to_string += 'Cover ' + str(index+1) + ': '
+        to_string += cycle_cover_to_string(co, sc_dic)
+        to_string += '\n'
+    return to_string
 
 
-def print_cycle_cover(cover, sc_dic):
-    """ Print a cycle cover.
+def cycle_cover_to_string(cover, sc_dic):
+    """ Convert a cycle cover to a string.
     Args:
-        covers (str): a cycle cover.
+        cover (str): a cycle cover.
         sc_dic (dict): dictionary that maps simple cycle index number to simple cycle.
+    Returns:
+        to_string (str): string representation of a cycle cover.
     """
+    to_string = ''
     for cycle in cover:
-        print(sc_dic[str(cycle)], end=' ')
-    print()
-    return
+        to_string += str(sc_dic[str(cycle)]) + ' '
+    return to_string
 
 
 def cycle_abundance(cover, max_abundance):
@@ -165,7 +171,7 @@ def cycle_abundance(cover, max_abundance):
 
 
 @util.timeit
-def best_cover_pearsonr(covers, max_abundance, segment_attribute_file):
+def best_cover_pearsonr(covers, max_abundance, segment_attribute_file, **kwargs):
     """ Return the best cycle cover and cycle abundance by calculating the largest
         Pearson correlation coefficient of segment counts and LogRatios for every
         cycle abundance in a cover.
@@ -173,6 +179,7 @@ def best_cover_pearsonr(covers, max_abundance, segment_attribute_file):
         covers (list of lists): a list of cycle covers
         max_abundance (int): maximum number of copies of a cycle.
         segment_attribute_file (str): file with attributes (LogRatio, Length, etc) for segment edges.
+        kwargs (dict): optional keyword arguments.
     Returns:
         best_cover
         best_product
@@ -180,6 +187,8 @@ def best_cover_pearsonr(covers, max_abundance, segment_attribute_file):
         largest_pearsonr
         best_p_value
     """
+    verbose = kwargs.pop('verbose', None)
+    sc_dic = kwargs.pop('sc_dic', None)
     logratio_lst = []
     with open(segment_attribute_file, 'r') as fin:
         fin.readline()
@@ -189,6 +198,10 @@ def best_cover_pearsonr(covers, max_abundance, segment_attribute_file):
                 break
             logratio_lst.append(float(line.split('\t')[2]))
 
+    if verbose:
+        fout = open('../temp/covers_5_log.txt', 'w')
+        fout.write('cover\tcycle_abundance\tpearsonr\tpvalue\n')
+
     largest_pearsonr = -1.0
     best_p_value = 0.0
     best_cover = []
@@ -197,12 +210,20 @@ def best_cover_pearsonr(covers, max_abundance, segment_attribute_file):
     for cover in covers:    # iterate over all covers
         for (product, segment_count_lst) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
             (pearson_cc, p_value) = pearsonr(logratio_lst, segment_count_lst)
+            if verbose:
+                fout.write(cycle_cover_to_string(cover, sc_dic) + '\t')
+                fout.write(str(product) + '\t')
+                fout.write(str(pearson_cc) + '\t')
+                fout.write(str(p_value) + '\n')
             if pearson_cc > largest_pearsonr:
                 largest_pearsonr = pearson_cc
                 best_p_value = p_value
                 best_cover = cover
                 best_product = product
                 best_segment_count_lst = segment_count_lst
+
+    if verbose:
+        fout.close()
     return best_cover, best_product, best_segment_count_lst, largest_pearsonr, best_p_value
 
 

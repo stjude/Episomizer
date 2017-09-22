@@ -46,14 +46,14 @@ def circDNA():
     for index, sc in enumerate(left_scs):
         sc_dic[str(sc)] = index + 1
     covers = cycle.find_cycle_covers(dg, left_scs)
-    cycle.print_cycle_covers(covers, sc_dic)
-    print()
+    print(cycle.cycle_covers_to_string(covers, sc_dic))
 
     max_abundance = 5
-    best_tuple = cycle.best_cover_pearsonr(covers, max_abundance, segment_attribute_file)
+    best_tuple = cycle.best_cover_pearsonr(covers, max_abundance, segment_attribute_file,\
+                                           verbose=True, sc_dic=sc_dic)
     print('\nBest cycle cover: ')
-    cycle.print_cycle_cover(best_tuple[0], sc_dic)
-    print('\nBest product: ')
+    print(cycle.cycle_cover_to_string(best_tuple[0], sc_dic) + '\n')
+    print('\nBest cycle abundance: ')
     print(best_tuple[1])
     print('\nBest segment count list: ')
     print(best_tuple[2])

@@ -11,8 +11,9 @@ Different with version 1, this version uses two vertices to represent a segment.
 import networkx as nx
 import itertools
 import math
+import heapq
 from scipy.stats.stats import pearsonr
-from scipy.spatial.distance import euclidean
+#from scipy.spatial.distance import euclidean
 
 import util
 
@@ -29,52 +30,55 @@ def find_simple_cycles(dg):
     return simple_cycles
 
 
-def print_simple_cycles(simple_cycles):
-    """ Print simple cycles.
+def simple_cycles_to_string(simple_cycles):
+    """ Convert simple cycles to a string.
         Args:
             simple_cycles (list): a list of lists
         Returns:
             None
     """
-    print('Number of simple cycles: ' + str(len(simple_cycles)))
+    to_string = ''
+    to_string += 'Number of simple cycles: ' + str(len(simple_cycles))
     for c in simple_cycles:
-        print(c)
-    print('\n')
-    return
+        to_string += c
+    to_string += '\n'
+    return to_string
 
 
-def print_simple_cycle(graph, sp):
-    """ Print a simple cycle.
+def simple_cycle_to_string(graph, sc):
+    """ Convert a simple cycle to a string.
     Args:
         graph (obj): a networkx graph
-        sp (list): a simple cycle
+        sc (list): a simple cycle
     Returns:
         None
     """
+    to_string = ''
     total_length = 0
-    if sp[0][:-1] == sp[1][:-1]:    # First two nodes form a segment edge
-        first_node = sp.pop(0)
-        sp.append(first_node)
+    if sc[0][:-1] == sc[1][:-1]:            # First two nodes form a segment edge
+        total_length += graph[sc[0][:-1] + 'L'][sc[1][:-1] + 'R']['Length']
+        first_node = sc.pop(0)
+        sc.append(first_node)
     in_segment = False
-    for index, node in enumerate(sp[:-1]):
+    for index, node in enumerate(sc[:-1]):
         if in_segment:
-            print(node[-1], end='')
+            to_string += str(node[-1])
         else:
-            print(node, end='')
-        if node[:-1] == sp[index+1][:-1]:   # segment edge
-            in_segment = True       # next node is in segment
+            to_string += str(node)
+        if node[:-1] == sc[index+1][:-1]:   # segment edge
+            in_segment = True               # next node is in segment
             total_length += graph[node[:-1] + 'L'][node[:-1] + 'R']['Length']
         else:
-            print(' -', end='')     # non-segment edge
-            print(graph[node][sp[index+1]]['type'][0].lower(), end='')
-            print('-> ', end='')
-            in_segment = False      # next node is not in segment
-    if sp[-1][:-1] == sp[-2][:-1]:
-        print(sp[-1][-1])
+            to_string += ' -'               # non-segment edge
+            to_string += str(graph[node][sc[index+1]]['type'][0].lower())
+            to_string += '-> '
+            in_segment = False              # next node is not in segment
+    if sc[-1][:-1] == sc[-2][:-1]:
+        to_string += str(sc[-1][-1])
     else:
-        print(sp[-1])
-    print('Length: ' + str(total_length) + '\n')
-    return
+        to_string += str(sc[-1])
+    to_string += str('\nLength: ' + str(total_length) + '\n')
+    return to_string
 
 
 def find_cycle_covers(graph, cycles):
@@ -114,7 +118,7 @@ def print_cycle_cover(covers, sc_dic):
 
 
 def cycle_covers_to_string(covers, sc_dic):
-    """ Cycle covers to strings.
+    """ Convert cycle covers to a string.
     Args:
         covers (str): cycle covers.
         sc_dic (dict): dictionary that maps simple cycle index number to simple cycle.
@@ -166,14 +170,14 @@ def cycle_abundance(cover, max_abundance):
                     segment_count_dict[int(segment[:-1])] = copy_number
         for key in segment_count_dict:
             segment_count_dict[key] = float(segment_count_dict[key] / 2)
-        segment_count_lst = []
+        segment_abundances = []
         for key in sorted(list(segment_count_dict.keys())):
-            segment_count_lst.append(segment_count_dict[key])
-        yield (product, segment_count_lst)
+            segment_abundances.append(segment_count_dict[key])
+        yield (product, segment_abundances)
 
 
 @util.timeit
-def best_cover(covers, max_abundance, segment_attribute_file, **kwargs):
+def best_cover(covers, max_abundance, segment_attribute_file, sc_dic, dis_func_name):
     """ Return the best cycle cover and cycle abundance by calculating the largest
         Pearson correlation coefficient of segment counts and LogRatios for every
         cycle abundance in a cover.
@@ -181,7 +185,8 @@ def best_cover(covers, max_abundance, segment_attribute_file, **kwargs):
         covers (list of lists): a list of cycle covers
         max_abundance (int): maximum number of copies of a cycle.
         segment_attribute_file (str): file with attributes (LogRatio, Length, etc) for segment edges.
-        kwargs (dict): optional keyword arguments.
+        sc_dic (dict): dictionary that maps from a cycle cover to its index in a list of cycle covers.
+        dis_func_name (str): distance function name.
     Returns:
         best_cover
         best_product
@@ -189,9 +194,7 @@ def best_cover(covers, max_abundance, segment_attribute_file, **kwargs):
         largest_pearsonr
         best_p_value
     """
-    verbose = kwargs.pop('verbose', None)
-    sc_dic = kwargs.pop('sc_dic', None)
-    logratio_lst = []
+    #logratio_lst = []
     ratio_lst = []
     with open(segment_attribute_file, 'r') as fin:
         fin.readline()
@@ -202,36 +205,19 @@ def best_cover(covers, max_abundance, segment_attribute_file, **kwargs):
             #logratio_lst.append(float(line.split('\t')[2]))
             ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
 
-    if verbose:
-        fout = open('/home/lding/Documents/Projects/circDNA/covers_10_pow2.txt', 'w')
-        fout.write('cover\tcycle_abundance\tpearsonr\tpvalue\n')
-
-    largest_pearsonr = -1.0
-    best_p_value = 0.0
-    best_cover = []
-    best_product = ()
-    best_segment_count_lst = []
+    heap = []
     for cover in covers:    # iterate over all covers
-        for (product, segment_count_lst) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
-            (pearson_cc, p_value) = pearsonr(ratio_lst, segment_count_lst)
-            #eu_distance = euclidean(ratio_lst, segment_count_lst)
-            if verbose:
-                fout.write(cycle_cover_to_string(cover, sc_dic) + '\t')
-                fout.write(str(product) + '\t')
-                fout.write(str(pearson_cc) + '\t')
-                fout.write(str(p_value) + '\n')
-                #fout.write(str(eu_distance) + '\n')
-            if pearson_cc > largest_pearsonr:
-                largest_pearsonr = pearson_cc
-                best_p_value = p_value
-                best_cover = cover
-                best_product = product
-                best_segment_count_lst = segment_count_lst
-            #break
-
-    if verbose:
-        fout.close()
-    return best_cover, best_product, best_segment_count_lst, largest_pearsonr, best_p_value
+        for (product, segment_abundances) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
+            dis_func = eval(dis_func_name)
+            (pearson_cc, p_value) = dis_func(ratio_lst, segment_abundances)
+            if len(heap) < 100:
+                heapq.heappush(heap, (pearson_cc, cycle_cover_to_string(cover, sc_dic), product, p_value))
+            else:
+                if heap[0][0] < pearson_cc:
+                    heapq.heappop(heap)
+                    heapq.heappush(heap, (pearson_cc, cycle_cover_to_string(cover, sc_dic), product, p_value))
+    sorted_by_pearson_cc = sorted(heap, key=lambda tup: tup[0], reverse=True)
+    return sorted_by_pearson_cc
 
 
 def main():

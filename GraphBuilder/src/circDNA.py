@@ -8,7 +8,6 @@ Date: 8/18/2017
 Episome detector.
 """
 
-import os
 import sys
 import argparse
 import itertools
@@ -34,12 +33,13 @@ def main():
 
     # Create a subparser for finding circular episomes
     subparser_circ = subparsers.add_parser('circ', help='Finding circular episomes.', parents=[parent_parser])
-    subparser_circ.add_argument('-m', '--max-abun', metavar='', type=int, help='Maximum cycle abundance.')
-    subparser_circ.add_argument('-n', '--non-seg', metavar='', help='Input file with non-segment edges.')
-    subparser_circ.add_argument('-s', '--seg', metavar='', help='Input file with segment edges.')
-    subparser_circ.add_argument('-a', '--seg-attr', metavar='', help='Input file with segment attributes.')
+    circ_req = subparser_circ.add_argument_group('required input arguments')
+    circ_req.add_argument('-s', '--seg', metavar='segment_file', required=True, help='Input file with segment edges.')
+    circ_req.add_argument('-n', '--non-seg', metavar='non_segment_file', required=True, help='Input file with non-segment edges.')
+    circ_req.add_argument('-a', '--seg-attr', metavar='segment_attribute_file', required=True, help='Input file with segment attributes.')
     subparser_circ.add_argument('-c', '--out-cycle', metavar='', help='Output cycle file.')
     subparser_circ.add_argument('-e', '--out-cover', metavar='', help='Output cycle cover file.')
+    subparser_circ.add_argument('-m', '--max-abun', metavar='', type=int, help='Maximum cycle abundance.')
     subparser_circ.add_argument('-u', '--out-abun', metavar='', help='Output cycle abundance file.')
     subparser_circ.add_argument('-f', '--out-sif', metavar='', help='Output sif file.')
 
@@ -60,63 +60,80 @@ def main():
             subparser_linear.print_help()
             sys.exit(0)
 
-    circDNA(args.max_abun, args.non_seg, args.seg, args.seg_attr, args.out_cycle, args.out_cover,
-            args.out_abun, args.out_sif)
+    circDNA(args.seg, args.non_seg, args.seg_attr,
+            out_cycle_file=args.out_cycle,
+            out_cycle_cover_file=args.out_cover,
+            max_abundance=args.max_abun,
+            out_cycle_abundance_file=args.out_abun,
+            out_sif_file=args.out_sif)
+
     #linearDNA()
     return
 
 
-def circDNA(max_abundance, non_segment_file, segment_file, segment_attribute_file, out_cycle_file,
-            out_cycle_cover_file, out_cycle_abundance_file, out_sif_file):
-    """ Driver function to detect circular DNA.
+def circDNA(segment_file, non_segment_file, segment_attribute_file, **kwargs):
+    """ Function to build a bidirected graph; find all episome(cycles); find all cycle covers;
+        filter false positive cycle covers and estimate cycle abundance.
     Args:
-        max_abundance (str): maximum cycle abundance
-        non_segment_file (str): path to a file containing non-segment edges
-        segment_file (str): path to a file containing segment edges
-        segment_attribute_file (str): path to a file containing segment attributes
-        out_cycle_file (str): path to a output file of cycles
-        out_cycle_cover_file (str): path to output file of cycle coves
-        out_cycle_abundance_file (str): path to output file of cycle abundance files
-        out_sif_file (str): path to sif output file (importable in Cytoscape)
-    Returns:
-        out_cycle_file: a file contains all cycles.
-        out_cycle_cover_file: a file contains all cycle covers.
-        out_cycle_abundance_file: a file contains best cycle abundances.
-        out_sif_file: a sif file of graph.
+        Required input arguments:
+            segment_file (str): path to a file containing segment edges
+            non_segment_file (str): path to a file containing non-segment edges
+            segment_attribute_file (str): path to a file containing segment attributes
+        Optional keyword arguments:
+            out_sif_file (str): path to sif output file (importable in Cytoscape)
+            out_cycle_file (str): path to a output file of cycles
+            out_cycle_cover_file (str): path to output file of cycle coves
+            max_abundance (str): maximum cycle abundance
+            out_cycle_abundance_file (str): path to output file of cycle abundance files
+        Returns:
+            out_cycle_file: a file contains all cycles.
+            out_cycle_cover_file: a file contains all cycle covers.
+            out_cycle_abundance_file: a file contains best cycle abundances.
+            out_sif_file: a sif file of graph.
     """
     # Build a directed graph
-    # Diagnosis sample
-    #non_segment_file = '../inputs/edges_for_graph_E.txt'
-    #segment_file = '../inputs/edges_for_graph_E_segments.txt'
-    #segment_attribute_file = '../input/E_copygain_LR3_details.txt'
-
     dg = graph.build_graph(non_segment_file, segment_file, segment_attribute_file=segment_attribute_file)
+    if kwargs['out_sif_file']:
+        print('Saving graph to sif file ...', file=sys.stderr)
+        graph.to_sif(dg, kwargs['out_sif_file'])
+        print('Done', file=sys.stderr)
 
-    graph.to_sif(dg, out_sif_file)
-    left_scs = find_circ_DNA(dg)
-    with open(out_cycle_file, 'w') as fout:
-        fout.write('Number of cycles: ' + str(len(left_scs)) + '\n')
-        for index, sc in enumerate(left_scs):
-            fout.write('Cycle ' + str(index+1) + '\n')
-            fout.write(cycle.simple_cycle_to_string(dg, sc) + '\n')
+    if kwargs['out_cycle_file']:
+        print('Finding all cycles ...', file=sys.stderr)
+        out_cycle_file = kwargs['out_cycle_file']
+        left_scs = find_circ_DNA(dg)
+        with open(out_cycle_file, 'w') as fout:
+            fout.write('Number of cycles: ' + str(len(left_scs)) + '\n')
+            for index, sc in enumerate(left_scs):
+                fout.write('Cycle ' + str(index+1) + '\n')
+                fout.write(cycle.simple_cycle_to_string(dg, sc) + '\n')
+        print('Done', file=sys.stderr)
 
-    sc_dic = dict()
-    for index, sc in enumerate(left_scs):
-        sc_dic[str(sc)] = index + 1
-    covers = cycle.find_cycle_covers(dg, left_scs)
-    with open(out_cycle_cover_file, 'w') as fout:
-        fout.write(cycle.cycle_covers_to_string(covers, sc_dic))
+        if kwargs['out_cycle_cover_file']:
+            print('Finding all cycle covers ...', file=sys.stderr)
+            out_cycle_cover_file = kwargs['out_cycle_cover_file']
+            sc_dic = dict()
+            for index, sc in enumerate(left_scs):
+                sc_dic[str(sc)] = index + 1
+            covers = cycle.find_cycle_covers(dg, left_scs)
+            with open(out_cycle_cover_file, 'w') as fout:
+                fout.write(cycle.cycle_covers_to_string(covers, sc_dic))
+            print('Done', file=sys.stderr)
 
-    max_abundance = max_abundance
-    best_cycle_abundances = cycle.best_cover(covers, max_abundance, segment_attribute_file, sc_dic, 'pearsonr')
-    with open(out_cycle_abundance_file, 'w') as fout:
-        fout.write('Pearson_cc\tcycle_cover\tcycle_abundance\tP-value\n')
-        for ca in best_cycle_abundances:
-            fout.write(str(ca[0]) + '\t')
-            fout.write(str(ca[1]) + '\t')
-            fout.write(str(ca[2]) + '\t')
-            fout.write(str(ca[3]) + '\n')
-    return
+            if kwargs['max_abundance'] and kwargs['out_cycle_abundance_file']:
+                print('Calculating the best cycle abundance ...', file=sys.stderr)
+                max_abundance = kwargs['max_abundance']
+                out_cycle_abundance_file = kwargs['out_cycle_abundance_file']
+                best_cycle_abundances = cycle.best_cover(covers, max_abundance, segment_attribute_file, sc_dic, 'pearsonr')
+                with open(out_cycle_abundance_file, 'w') as fout:
+                    fout.write('Pearson_cc\tcycle_cover\tcycle_abundance\tP-value\n')
+                    for ca in best_cycle_abundances:
+                        fout.write(str(ca[0]) + '\t')
+                        fout.write(str(ca[1]) + '\t')
+                        fout.write(str(ca[2]) + '\t')
+                        fout.write(str(ca[3]) + '\n')
+                print('Done', file=sys.stderr)
+        return
 
 
 def linearDNA():

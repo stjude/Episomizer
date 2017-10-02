@@ -1,0 +1,69 @@
+Number of cycles: 17
+Cycle 1
+41L -a-> 40RL -a-> 39RL -a-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -d-> 24RL -b-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2RL -s-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -s-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41R
+Length: 1764000
+
+Cycle 2
+41L -a-> 40RL -a-> 39RL -a-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -d-> 24RL -b-> 13RL -a-> 12RL -s-> 26RL -s-> 2RL -s-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -s-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41R
+Length: 1540400
+
+Cycle 3
+28L -s-> 32RL -a-> 31RL -s-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -b-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -d-> 24RL -b-> 13RL -a-> 12RL -s-> 26RL -s-> 2RL -s-> 29RL -a-> 28R
+Length: 1178500
+
+Cycle 4
+3R -a-> 4LR -a-> 5LR -a-> 6LR -a-> 7LR -a-> 8LR -a-> 9LR -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -b-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -s-> 2LR -a-> 3L
+Length: 1031400
+
+Cycle 5
+3R -a-> 4LR -a-> 5LR -a-> 6LR -a-> 7LR -a-> 8LR -a-> 9LR -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -s-> 15LR -a-> 16LR -s-> 17LR -b-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -s-> 2LR -a-> 3L
+Length: 1014500
+
+Cycle 6
+3R -a-> 4LR -a-> 5LR -a-> 6LR -a-> 7LR -a-> 8LR -a-> 9LR -a-> 10LR -b-> 43LR -a-> 44LR -s-> 21LR -a-> 22LR -s-> 36RL -a-> 35RL -s-> 31LR -a-> 32LR -s-> 28LR -a-> 29LR -s-> 2LR -a-> 3L
+Length: 1013500
+
+Cycle 7
+39R -a-> 40LR -b-> 6RL -a-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -d-> 24RL -b-> 13RL -a-> 12RL -s-> 26RL -s-> 2RL -s-> 29RL -b-> 35RL -s-> 31LR -s-> 37LR -a-> 38LR -a-> 39L
+Length: 806900
+
+Cycle 8
+40L -s-> 34LR -a-> 35LR -b-> 29LR -s-> 2LR -s-> 26LR -s-> 12LR -a-> 13LR -b-> 24LR -d-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -a-> 6LR -b-> 40R
+Length: 695000
+
+Cycle 9
+41L -a-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41R
+Length: 698300
+
+Cycle 10
+17R -b-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -s-> 2LR -s-> 26LR -s-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17L
+Length: 807800
+
+Cycle 11
+12L -a-> 11RL -a-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -d-> 24RL -b-> 13RL -a-> 12R
+Length: 388600
+
+Cycle 12
+39R -a-> 40LR -b-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2RL -s-> 29RL -b-> 35RL -s-> 31LR -s-> 37LR -a-> 38LR -a-> 39L
+Length: 641900
+
+Cycle 13
+17R -b-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -s-> 2LR -s-> 26LR -s-> 12LR -a-> 13LR -s-> 15LR -a-> 16LR -s-> 17L
+Length: 790900
+
+Cycle 14
+41L -a-> 40RL -s-> 34LR -a-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41R
+Length: 586400
+
+Cycle 15
+40L -s-> 34LR -a-> 35LR -b-> 29LR -s-> 2LR -a-> 3LR -a-> 4LR -a-> 5LR -a-> 6LR -b-> 40R
+Length: 530000
+
+Cycle 16
+17R -b-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17L
+Length: 315200
+
+Cycle 17
+28L -s-> 32RL -a-> 31RL -a-> 30RL -a-> 29RL -a-> 28R
+Length: 640000
+

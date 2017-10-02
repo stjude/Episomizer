@@ -1,1 +1,0 @@
-Pearson_cc	cycle_cover	cycle_abundance	P-value

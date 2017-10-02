@@ -1,0 +1,29 @@
+Number of cycles: 7
+Cycle 1
+15R -a-> 16LR -s-> 24LR -a-> 25LR -d-> 28LR -a-> 29LR -s-> 20RL -a-> 19RL -s-> 9RL -a-> 8RL -a-> 7RL -b-> 6LR -s-> 3RL -s-> 1RL -s-> 2LR -s-> 12RL -a-> 11RL -s-> 4LR -a-> 5LR -s-> 14LR -a-> 15L
+Length: 1887800
+
+Cycle 2
+10L -a-> 9RL -a-> 8RL -a-> 7RL -b-> 6LR -s-> 3RL -s-> 1RL -s-> 2LR -s-> 12RL -a-> 11RL -s-> 4LR -a-> 5LR -s-> 14LR -s-> 10R
+Length: 719300
+
+Cycle 3
+9R -s-> 19LR -a-> 20LR -a-> 21LR -a-> 22LR -a-> 23LR -a-> 24LR -a-> 25LR -a-> 26LR -a-> 27LR -s-> 9L
+Length: 932300
+
+Cycle 4
+9R -s-> 19LR -a-> 20LR -s-> 29RL -a-> 28RL -d-> 25RL -a-> 24RL -s-> 16RL -s-> 27LR -s-> 9L
+Length: 974000
+
+Cycle 5
+10L -a-> 9RL -s-> 27RL -s-> 16LR -a-> 17LR -s-> 18LR -m-> 13LR -a-> 14LR -s-> 10R
+Length: 657200
+
+Cycle 6
+15R -a-> 16LR -a-> 17LR -s-> 18LR -m-> 13LR -a-> 14LR -a-> 15L
+Length: 851700
+
+Cycle 7
+9R -s-> 19LR -s-> 22RL -s-> 25LR -a-> 26LR -a-> 27LR -s-> 9L
+Length: 403200
+

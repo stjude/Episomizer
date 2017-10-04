@@ -21,7 +21,6 @@ def build_graph(non_segment_file, segment_file, **kwargs):
         Return:
             obj: a networkx graph object.
                 (edge attribute: type; segment edge attributes: Length and LogRatio)
-
     """
     # Read graph text file
     non_segment_edges = []

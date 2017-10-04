@@ -182,7 +182,7 @@ def best_cover(covers, max_abundance, segment_attribute_file, sc_dic, dis_func_n
         Pearson correlation coefficient of segment counts and LogRatios for every
         cycle abundance in a cover.
     Args:
-        covers (list of lists): a list of cycle covers
+        covers (list of lists): a list of cycle covers.
         max_abundance (int): maximum number of copies of a cycle.
         segment_attribute_file (str): file with attributes (LogRatio, Length, etc) for segment edges.
         sc_dic (dict): dictionary that maps from a cycle cover to its index in a list of cycle covers.

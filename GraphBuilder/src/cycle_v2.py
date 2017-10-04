@@ -194,22 +194,22 @@ def best_cover(covers, max_abundance, segment_attribute_file, sc_dic, dis_func_n
         largest_pearsonr
         best_p_value
     """
-    #logratio_lst = []
-    ratio_lst = []
+    logratio_lst = []
+    #ratio_lst = []
     with open(segment_attribute_file, 'r') as fin:
         fin.readline()
         while True:
             line = fin.readline().rstrip()
             if not line:
                 break
-            #logratio_lst.append(float(line.split('\t')[2]))
-            ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
+            logratio_lst.append(float(line.split('\t')[2]))
+            #ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
 
     heap = []
     for cover in covers:    # iterate over all covers
         for (product, segment_abundances) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
             dis_func = eval(dis_func_name)
-            (pearson_cc, p_value) = dis_func(ratio_lst, segment_abundances)
+            (pearson_cc, p_value) = dis_func(logratio_lst, segment_abundances)
             if len(heap) < 100:
                 heapq.heappush(heap, (pearson_cc, cycle_cover_to_string(cover, sc_dic), product, p_value))
             else:

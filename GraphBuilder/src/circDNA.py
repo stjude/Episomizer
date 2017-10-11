@@ -158,7 +158,6 @@ def find_circ_DNA(dg):
     simple_cycles = cycle.find_simple_cycles(dg)
     filtered_scs = path.filter_jump_paths(simple_cycles)
     left_scs = path.rm_reverse_paths(filtered_scs)
-
     return left_scs
 
 

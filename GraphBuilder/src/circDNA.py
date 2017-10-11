@@ -124,14 +124,14 @@ def circDNA(segment_file, non_segment_file, segment_attribute_file, **kwargs):
                 print('Calculating the best cycle abundance ...', file=sys.stderr)
                 max_abundance = kwargs['max_abundance']
                 out_cycle_abundance_file = kwargs['out_cycle_abundance_file']
-                best_cycle_abundances = cycle.best_cover(covers, max_abundance, segment_attribute_file, sc_dic, 'pearsonr')
+                #best_cycle_abundances = cycle.best_cover(covers, max_abundance, segment_attribute_file, sc_dic, 'pearsonr')
+                best_cycle_abundances = cycle.best_cover(covers, max_abundance, segment_attribute_file, sc_dic, 'euclidean')
                 with open(out_cycle_abundance_file, 'w') as fout:
-                    fout.write('Pearson_cc\tcycle_cover\tcycle_abundance\tP-value\n')
+                    fout.write('Distance\tcycle_cover\tcycle_abundance\n')
                     for ca in best_cycle_abundances:
-                        fout.write(str(ca[0]) + '\t')
+                        fout.write(str(0 - ca[0]) + '\t')
                         fout.write(str(ca[1]) + '\t')
-                        fout.write(str(ca[2]) + '\t')
-                        fout.write(str(ca[3]) + '\n')
+                        fout.write(str(ca[2]) + '\n')
                 print('Done', file=sys.stderr)
         return
 

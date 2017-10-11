@@ -13,6 +13,8 @@ import itertools
 import math
 import heapq
 from scipy.stats.stats import pearsonr
+from scipy.stats import zscore
+from scipy.spatial.distance import euclidean
 #from scipy.spatial.distance import euclidean
 
 import util
@@ -194,30 +196,33 @@ def best_cover(covers, max_abundance, segment_attribute_file, sc_dic, dis_func_n
         largest_pearsonr
         best_p_value
     """
-    logratio_lst = []
-    #ratio_lst = []
+    #logratio_lst = []
+    ratio_lst = []
     with open(segment_attribute_file, 'r') as fin:
         fin.readline()
         while True:
             line = fin.readline().rstrip()
             if not line:
                 break
-            logratio_lst.append(float(line.split('\t')[2]))
-            #ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
+            #logratio_lst.append(float(line.split('\t')[2]))
+            ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
+    normalized_ratio_lst = zscore(ratio_lst)
 
     heap = []
     for cover in covers:    # iterate over all covers
         for (product, segment_abundances) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
+            normalized_segment_abundances = zscore(segment_abundances)
             dis_func = eval(dis_func_name)
-            (pearson_cc, p_value) = dis_func(logratio_lst, segment_abundances)
+            #(pearson_cc, p_value) = dis_func(normalized_ratio_lst, normalized_segment_abundances)
+            distance = 0 - dis_func(normalized_ratio_lst, normalized_segment_abundances)
             if len(heap) < 100:
-                heapq.heappush(heap, (pearson_cc, cycle_cover_to_string(cover, sc_dic), product, p_value))
+                heapq.heappush(heap, (distance, cycle_cover_to_string(cover, sc_dic), product))
             else:
-                if heap[0][0] < pearson_cc:
+                if heap[0][0] < distance:
                     heapq.heappop(heap)
-                    heapq.heappush(heap, (pearson_cc, cycle_cover_to_string(cover, sc_dic), product, p_value))
-    sorted_by_pearson_cc = sorted(heap, key=lambda tup: tup[0], reverse=True)
-    return sorted_by_pearson_cc
+                    heapq.heappush(heap, (distance, cycle_cover_to_string(cover, sc_dic), product))
+    sorted_by_distance = sorted(heap, key=lambda tup: tup[0], reverse=True)
+    return sorted_by_distance
 
 
 def main():

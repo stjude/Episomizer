@@ -10,7 +10,6 @@ Different with version 2, this version uses one vertices to represent a segment.
 
 import os
 import networkx as nx
-#import matplotlib.pyplot as plt
 
 
 def main():

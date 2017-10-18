@@ -12,10 +12,9 @@ import networkx as nx
 import itertools
 import math
 import heapq
-from scipy.stats.stats import pearsonr
 from scipy.stats import zscore
+from scipy.stats.stats import pearsonr
 from scipy.spatial.distance import euclidean
-#from scipy.spatial.distance import euclidean
 
 import util
 
@@ -179,16 +178,19 @@ def cycle_abundance(cover, max_abundance):
 
 
 @util.timeit
-def best_cover(covers, max_abundance, segment_attribute_file, sc_dic, dis_func_name):
+def best_cover(covers, max_abundance, segment_attribute_file, sc_dic, dis_func_name, **kwargs):
     """ Return the best cycle cover and cycle abundance by calculating the largest
         Pearson correlation coefficient of segment counts and LogRatios for every
         cycle abundance in a cover.
-    Args:
+    Required Args:
         covers (list of lists): a list of cycle covers.
         max_abundance (int): maximum number of copies of a cycle.
         segment_attribute_file (str): file with attributes (LogRatio, Length, etc) for segment edges.
         sc_dic (dict): dictionary that maps from a cycle cover to its index in a list of cycle covers.
         dis_func_name (str): distance function name.
+    Optional Keyword Args:
+        norm_func_name (str): normalization function name.
+        log_ratio (bool): use LogRatio. Otherwise, use just ratio.
     Returns:
         best_cover
         best_product
@@ -196,31 +198,52 @@ def best_cover(covers, max_abundance, segment_attribute_file, sc_dic, dis_func_n
         largest_pearsonr
         best_p_value
     """
-    #logratio_lst = []
     ratio_lst = []
+    use_log_ratio = False
+    if 'log_ratio' in kwargs and kwargs['log_ratio']:
+        use_log_ratio = True
     with open(segment_attribute_file, 'r') as fin:
         fin.readline()
         while True:
             line = fin.readline().rstrip()
             if not line:
                 break
-            #logratio_lst.append(float(line.split('\t')[2]))
-            ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
-    normalized_ratio_lst = zscore(ratio_lst)
+            if use_log_ratio:
+                ratio_lst.append(float(line.split('\t')[2]))
+            else:
+                ratio_lst.append(math.pow(2, float(line.split('\t')[2])))
+
+    norm_func = None
+    if 'norm_func_name' in kwargs and kwargs['norm_func_name']:
+        norm_func = eval(kwargs['norm_func_name'])
+        normalized_ratio_lst = norm_func(ratio_lst)
+    else:
+        normalized_ratio_lst = ratio_lst
 
     heap = []
+    dis_func = eval(dis_func_name)
     for cover in covers:    # iterate over all covers
         for (product, segment_abundances) in cycle_abundance(cover, max_abundance):  # iterate over all cycle abundance
-            normalized_segment_abundances = zscore(segment_abundances)
-            dis_func = eval(dis_func_name)
-            #(pearson_cc, p_value) = dis_func(normalized_ratio_lst, normalized_segment_abundances)
-            distance = 0 - dis_func(normalized_ratio_lst, normalized_segment_abundances)
-            if len(heap) < 100:
-                heapq.heappush(heap, (distance, cycle_cover_to_string(cover, sc_dic), product))
+            if norm_func:
+                normalized_segment_abundances = norm_func(segment_abundances)
             else:
-                if heap[0][0] < distance:
-                    heapq.heappop(heap)
+                normalized_segment_abundances = segment_abundances
+            if dis_func_name == 'pearsonr':
+                (pearson_cc, p_value) = dis_func(normalized_ratio_lst, normalized_segment_abundances)
+                if len(heap) < 100:
+                    heapq.heappush(heap, (pearson_cc, cycle_cover_to_string(cover, sc_dic), product, p_value))
+                else:
+                    if heap[0][0] < pearson_cc:
+                        heapq.heappop(heap)
+                        heapq.heappush(heap, (pearson_cc, cycle_cover_to_string(cover, sc_dic), product, p_value))
+            else:
+                distance = 0 - dis_func(normalized_ratio_lst, normalized_segment_abundances)
+                if len(heap) < 100:
                     heapq.heappush(heap, (distance, cycle_cover_to_string(cover, sc_dic), product))
+                else:
+                    if heap[0][0] < distance:
+                        heapq.heappop(heap)
+                        heapq.heappush(heap, (distance, cycle_cover_to_string(cover, sc_dic), product))
     sorted_by_distance = sorted(heap, key=lambda tup: tup[0], reverse=True)
     return sorted_by_distance
 

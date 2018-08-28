@@ -1,0 +1,112 @@
+#!/usr/bin/env python3
+"""
+Python version: 3.6
+Author: Liang Ding
+Date: 8/18/2017
+
+This module constructs a networkx graph.
+"""
+
+import networkx as nx
+
+
+def build_graph(non_segment_file, segment_file, **kwargs):
+    """ Read a text file with number of nodes and edges. Create a networkx bidirectional graph.
+        Args:
+            Required arguments:
+                non_segment_file (str): a text file with non-segment edges.
+                segment_file (str): a text file with segment edges.
+            optional keyword arguments:
+                segment_attribute_file (str): a file with LogRatios and lengths for segment edges.
+        Return:
+            obj: a networkx graph object.
+                (edge attribute: type; segment edge attributes: Length and LogRatio)
+    """
+    # Read graph text file
+    non_segment_edges = []
+    with open(non_segment_file, 'r') as fin:
+        while True:
+            line = fin.readline().rstrip()
+            if not line:
+                break
+            non_segment_edges.append(tuple([v for v in line.split('\t')]))
+
+    # Create networkx graph object
+    dg = nx.DiGraph()
+    # Add two nodes for every segment; add segment edges
+    with open(segment_file, 'r') as fin:
+        while True:
+            line = fin.readline().rstrip()
+            if not line:
+                break
+            tokens = line.split('\t')
+            dg.add_node(tokens[0])
+            dg.add_node(tokens[1])
+            dg.add_edge(tokens[0], tokens[1], type='SEG')
+            dg.add_edge(tokens[1], tokens[0], type='SEG')
+
+    # Add non-segment edges. Use column 5 as edge type
+    for e in non_segment_edges:
+        dg.add_edge(e[0], e[1], type=e[5])
+        dg.add_edge(e[1], e[0], type=e[5])
+
+    if 'segment_attribute_file' in kwargs:
+        with open(kwargs['segment_attribute_file']) as fin:
+            fin.readline()
+            while True:
+                line = fin.readline().rstrip()
+                if not line:
+                    break
+                tokens = line.split('\t')
+                segment = tokens[0]
+                log_ratio = float(tokens[2])
+                length = int(tokens[3])
+                dg[segment + 'L'][segment + 'R']['LogRatio'] = log_ratio
+                dg[segment + 'R'][segment + 'L']['LogRatio'] = log_ratio
+                dg[segment + 'L'][segment + 'R']['Length'] = length
+                dg[segment + 'R'][segment + 'L']['Length'] = length
+    return dg
+
+
+def to_sif(graph, sif_file):
+    """ Convert networkx graph to sig format.
+    Args:
+        graph (obj): a networkx graph object
+    Return:
+        A sig file
+    """
+    edge_set = set()
+    with open(sif_file, 'w') as fout:
+        for e in graph.edges(data='type'):
+            edge_str = e[0] + ' ' + e[2] + ' ' + e[1]
+            if edge_str not in edge_set:
+                fout.write(edge_str + '\n')
+            edge_set.add(edge_str)
+            reverse_edge_str = e[1] + ' ' + e[2] + ' ' + e[0]
+            edge_set.add(reverse_edge_str)
+
+
+def print_graph(graph, verbose):
+    """ Print a networkx graph.
+    Args:
+        graph (object): a networkx graph
+        verbose (bool): whether to print nodes and edges
+    Return:
+        None
+    """
+    print('Number of vertices: ' + str(len(graph.nodes())))
+    if verbose:
+        print(graph.nodes())
+        print('\n')
+    print('Number of edges: ' + str(len(graph.edges())))
+    if verbose:
+        print(graph.edges())
+        print('\n')
+
+
+def main():
+    return
+
+
+if __name__ == '__main__':
+    main()

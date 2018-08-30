@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """
-Python version: 3.6
-Author: Liang Ding
-Date: 8/18/2017
-
-This module finds simple paths.
+This module contains functions about simple paths.
 """
 
 import networkx as nx

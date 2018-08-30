@@ -1,21 +1,9 @@
 #!/usr/bin/env python3
 """
-Python version: 3.6
-Author: Liang Ding
-Date: 8/9/2017
-
 Find simple cycles for a bidirected graph.
 """
 
 import networkx as nx
-import itertools
-import math
-import heapq
-from scipy.stats import zscore
-from scipy.stats.stats import pearsonr
-from scipy.spatial.distance import euclidean
-
-import util
 
 
 def find_simple_cycles(dg):

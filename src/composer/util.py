@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 """
-Python version: 3.6
-
-Author: Liang Ding
-Date: 9/20/2017
+Module contains utility functions.
 """
 
 import time

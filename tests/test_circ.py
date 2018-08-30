@@ -1,15 +1,9 @@
 #!/usr/bin/env python3
 """
-Python version: 3.6
-
-Author: Liang Ding
-Date: 10/17/2017
-
-Tester for composer.py circ.
+Testers for graph generation and simple cycle finder.
 """
 
 import unittest
-import subprocess
 import util
 
 
@@ -27,14 +21,14 @@ class TestComposer(unittest.TestCase):
         """
         out_sif_file = '{}/outputs/relapse/graph.sif'.format(self.test_data_dir)
         cmd = '{} -sf {}'.format(self.cmd_input, out_sif_file)
-        subprocess.check_call(cmd, shell=True)
+        util.run_shell_command_call(cmd)
 
     def test_find_cycles(self):
         """ Test finding all simple cycles.
         """
         out_cycle_file = '{}/outputs/relapse/cycle.txt'.format(self.test_data_dir)
         cmd = '{} -cy {}'.format(self.cmd_input, out_cycle_file)
-        subprocess.check_call(cmd, shell=True)
+        util.run_shell_command_call(cmd)
 
     def tearDown(self):
         pass

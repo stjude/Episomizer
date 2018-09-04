@@ -29,7 +29,7 @@ addpython() {
 addperl() {
   if [ -d $1 ]; then NEWPERL5LIB=$(prepend "$PERL5LIB" "$1"); export PERL5LIB="$NEWPERL5LIB"; fi
 }
-addpython $EPISOMIZER_HOME/src/composer
+addpython $EPISOMIZER_HOME/lib/composer
 addbin $EPISOMIZER_HOME/bin
 
 echo "Sourcing completed successfully"

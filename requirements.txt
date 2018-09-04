@@ -1,0 +1,6 @@
+Perl=5.10.1
+R=3.0.1
+samtools=1.7
+blat=36
+Python=3.6
+NetworkX=2.1

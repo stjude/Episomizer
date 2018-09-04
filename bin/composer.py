@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-Episome composer.
+Episome composer takes inputs of highly amplified somatic copy number alteration (CNA) segments and
+structure variants (SV) associated with the segment boundaries, composes the segments to form simple
+cycles as candidates of double minute structures.
 """
 
 import sys
@@ -14,104 +16,100 @@ import path
 def main():
     """ Program entry and argument handler.
     """
-    head_description = 'Circular and linear episome detector from segments.'
+    head_description = 'Double minute composer based on CNAs and SVs.'
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=head_description)
 
-    # Create a parent parser with common arguments for every subparser
-    parent_parser = argparse.ArgumentParser(description='Tools for a tartan run.', add_help=False)
-    parent_parser.add_argument('-v', '--verbose', help='Enable verbose mode.', action='store_true')
-    parent_parser.add_argument('-d', '--debug', help='Enable debug mode.', action='store_true')
-    parent_parser.add_argument('--dry-run', help='Enable dry-run mode.', action='store_true')
+    # Create a parent parser with common arguments for every subparser.
+    parent_parser = argparse.ArgumentParser(description='double minute composer.', add_help=False)
+    parent_parser.add_argument('-v', '--verbose', help='enable verbose mode', action='store_true')
+    subparsers = parser.add_subparsers(title='Subcommands', help="Subcommands", dest='subparser_name')
 
-    subparsers = parser.add_subparsers(title='Subcommands', help='Valid subcommands.', dest='subparser_name')
-    # Create a subparser for finding circular episomes
-    subparser_circ = subparsers.add_parser('circ', help='Finding circular episomes.', parents=[parent_parser])
+    # Create a subparser for composing double minutes.
+    subparser_circ = subparsers.add_parser('circ', help='circular double minute composer', parents=[parent_parser])
+    circ_req = subparser_circ.add_argument_group('input arguments')
+    circ_req.add_argument('-c', '--cna-segment', metavar='FILE', required=True,
+                          help='input bed file containing somatic copy number alteration segments')
+    circ_req.add_argument('-l', '--linked-sv', metavar='FILE', required=True,
+                          help='input tab-delimited text file containing linked structure variant boundaries')
 
-    circ_req = subparser_circ.add_argument_group('Input arguments')
-    circ_req.add_argument('-s', metavar='FILE', help='Input file with segment edges.')
-    circ_req.add_argument('-n', metavar='FILE', help='Input file with non-segment edges.')
-    circ_req.add_argument('-a', metavar='FILE', help='Input file with segment attributes.')
+    circ_sif = subparser_circ.add_argument_group('arguments for creating a sif file for graph displaying')
+    circ_sif.add_argument('-s', '--sif', metavar='FILE', help='output sif file')
 
-    circ_sif = subparser_circ.add_argument_group('Arguments for creating sif file')
-    circ_sif.add_argument('-sf', metavar='FILE', help='Output sif file.')
-
-    circ_cycle = subparser_circ.add_argument_group('Arguments for generating cycles')
-    circ_cycle.add_argument('-cy', metavar='FILE', help='Output cycle file.')
+    circ_dm = subparser_circ.add_argument_group('arguments for generating circular double minutes')
+    circ_dm.add_argument('-d', '--circ-dm', metavar='FILE', help='output circular double minute file')
 
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit(0)
 
-    args = parser.parse_args()
+    try:
+        args = parser.parse_args()
+    except:
+        subparser_circ.print_help()
+        sys.exit(1)
 
-    if len(sys.argv) == 2:
-        if args.subparser_name == 'circ':
-            subparser_circ.print_help()
-            sys.exit(0)
-
-    circ_handler(args.s, args.n, args.a, out_sif_file=args.sf, out_cycle_file=args.cy)
+    circ_handler(args.cna_segment, args.linked_sv, out_sif_file=args.sif, out_dm_file=args.circ_dm)
 
 
-def circ_handler(segment_file, non_segment_file, segment_attribute_file, **kwargs):
-    """ Has the functions to build a bidirected graph, find all episome(cycles),
-        find all cycle covers, filter false positive cycle covers and estimate cycle abundance.
+def circ_handler(cna_segment_file, linked_sv_file, **kwargs):
+    """ Build a bidirected graph, find all simple cycles in the graph as candidates of circular double minutes.
     Args:
         Required input arguments:
-            segment_file (str): path to a file containing segment edges
-            non_segment_file (str): path to a file containing non-segment edges
-            segment_attribute_file (str): path to a file containing segment attributes
+            cna_segment_file (str): path to a bed file containing somatic copy number alteration segments.
+            linked_sv_file (str): path to a tab-delimited text file containing linked structure variant boundaries.
         Optional keyword arguments:
-            out_sif_file (str): path to an output sif file (importable in Cytoscape)
-            out_cycle_file (str): path to an output file of cycles
-    Returns:
-            None
-    """
-    # Build a directed graph
-    dg = graph.build_graph(non_segment_file, segment_file, segment_attribute_file=segment_attribute_file)
-    if kwargs['out_sif_file']:
-        graph_to_sif(dg, kwargs['out_sif_file'])
-        sys.exit(0)
-
-    if kwargs['out_cycle_file']:
-        find_cycles(dg, kwargs['out_cycle_file'])
-        sys.exit(0)
-
-
-def graph_to_sif(dg, out_sif_file):
-    """ Save graph to a sif file.
-    Args:
-        db (obj): a networkx graph
-        out_sif_file (str): path to an output sif file.
+            sif_file (str): path to an output sif file (importable in Cytoscape).
+            circ_dm_file (str): path to an output circular double minute file.
     Returns:
         None
     """
-    print('Saving graph to sif file ...', file=sys.stderr)
-    graph.to_sif(dg, out_sif_file)
+    # Build a directed graph
+    dg = graph.build_graph(linked_sv_file, cna_segment_file)
+
+    # Output to a sif file if the argument exists
+    if kwargs['sif_file']:
+        output_graph_to_sif(dg, kwargs['sif_file'])
+        sys.exit(0)
+
+    # Find double mintues and output to a file if the argument exists
+    if kwargs['circ_dm_file']:
+        find_circular_double_minutes(dg, kwargs['circ_dm_file'])
+        sys.exit(0)
+
+
+def output_graph_to_sif(dg, sif_file):
+    """ Output the graph to a sif file.
+    Args:
+        dg (obj): a networkx directed graph object.
+        sif_file (str): path to an output sif file.
+    Returns:
+        None
+    """
+    print('Outputing the graph to a sif file ...', file=sys.stderr)
+    graph.to_sif(dg, sif_file)
     print('Done', file=sys.stderr)
 
 
-def find_cycles(dg, out_cycle_file):
+def find_circular_double_minutes(dg, circ_dm_file):
     """ Find all simple cycles.
     Args:
-        dg (obj): a networkx directed graph object
-        out_cycle_file (obj): path to an output cycle file
+        dg (obj): a networkx directed graph object.
+        circ_dm_file (obj): path to an output circular double minute file.
     Returns:
-        left_scs (list): list of simple cycles
+        circ_double_minutes (list): circular double minutes.
     """
-    print('Finding all cycles ...', file=sys.stderr)
-    out_cycle_file = out_cycle_file
+    print('Finding circular double minutes ...', file=sys.stderr)
     simple_cycles = cycle.find_simple_cycles(dg)
-    filtered_scs = path.filter_jump_paths(simple_cycles)
-    left_scs = path.rm_reverse_paths(filtered_scs)
-    with open(out_cycle_file, 'w') as fout:
-        fout.write('Number of cycles: ' + str(len(left_scs)) + '\n')
-        for index, sc in enumerate(left_scs):
-            fout.write('Cycle ' + str(index + 1) + '\n')
+    filtered_simple_cycles = path.filter_jump_paths(simple_cycles)
+    circ_double_minutes = path.rm_reverse_paths(filtered_simple_cycles)
+    with open(circ_dm_file, 'w') as fout:
+        fout.write('Number of circular double minutes: ' + str(len(circ_double_minutes)) + '\n')
+        for index, sc in enumerate(circ_double_minutes):
+            fout.write('Double minute ' + str(index + 1) + ':\n')
             fout.write(cycle.simple_cycle_to_string(dg, sc) + '\n')
     print('Done', file=sys.stderr)
-    return left_scs
+    return circ_double_minutes
 
 
 if __name__ == '__main__':
     main()
-

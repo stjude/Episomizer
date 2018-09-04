@@ -6,21 +6,22 @@ This module contains functions to work with networkx graphs.
 import networkx as nx
 
 
-def build_graph(non_segment_file, segment_file, **kwargs):
+def build_graph(cna_segment_file, linked_sv_file, **kwargs):
     """ Read a text file with number of nodes and edges. Create a networkx bidirectional graph.
-        Args:
-            Required arguments:
-                non_segment_file (str): a text file with non-segment edges.
-                segment_file (str): a text file with segment edges.
-            optional keyword arguments:
-                segment_attribute_file (str): a file with LogRatios and lengths for segment edges.
-        Return:
-            obj: a networkx graph object.
-                (edge attribute: type; segment edge attributes: Length and LogRatio)
+    Args:
+        Required arguments:
+            cna_segment_file (str): path to a bed file containing somatic copy number alteration segments
+            linked_sv_file (str): path to a tab-delimited text file containing linked structure variant boundaries
+        optional keyword arguments:
+            segment_attribute_file (str): path to a file with additional attributes of the segments
+            (e.g., LogRatios, lengths, etc.)
+    Return:
+        obj: a networkx graph object.
+            (edge attribute: type; segment edge attributes: Length and LogRatio)
     """
     # Read graph text file
     non_segment_edges = []
-    with open(non_segment_file, 'r') as fin:
+    with open(linked_sv_file, 'r') as fin:
         while True:
             line = fin.readline().rstrip()
             if not line:
@@ -29,8 +30,9 @@ def build_graph(non_segment_file, segment_file, **kwargs):
 
     # Create networkx graph object
     dg = nx.DiGraph()
+
     # Add two nodes for every segment; add segment edges
-    with open(segment_file, 'r') as fin:
+    with open(cna_segment_file, 'r') as fin:
         while True:
             line = fin.readline().rstrip()
             if not line:
@@ -65,11 +67,12 @@ def build_graph(non_segment_file, segment_file, **kwargs):
 
 
 def to_sif(graph, sif_file):
-    """ Convert networkx graph to sig format.
+    """ Output a networkx directed graph object to a sig file.
     Args:
-        graph (obj): a networkx graph object
+        graph (obj): a networkx directed graph object
+        sif_file (str): path to an output sif file
     Return:
-        A sig file
+        None
     """
     edge_set = set()
     with open(sif_file, 'w') as fout:
@@ -83,26 +86,18 @@ def to_sif(graph, sif_file):
 
 
 def print_graph(graph, verbose):
-    """ Print a networkx graph.
+    """ Print a networkx directed graph object.
     Args:
-        graph (object): a networkx graph
+        graph (object): a networkx directed graph object
         verbose (bool): whether to print nodes and edges
     Return:
         None
     """
-    print('Number of vertices: ' + str(len(graph.nodes())))
+    print('Number of vertices: {}'.format(str(len(graph.nodes()))))
     if verbose:
         print(graph.nodes())
         print('\n')
-    print('Number of edges: ' + str(len(graph.edges())))
+    print('Number of edges: {}'.format(str(len(graph.edges()))))
     if verbose:
         print(graph.edges())
         print('\n')
-
-
-def main():
-    return
-
-
-if __name__ == '__main__':
-    main()

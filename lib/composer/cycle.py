@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-Find simple cycles for a bidirected graph.
+This module contains functions to work with simple cycles on a bidirected graph.
 """
 
 import networkx as nx
 
 
 def find_simple_cycles(dg):
-    """ Find all simple cycles of a networkx graph.
-        Args:
-            dg (obj): a networkx graph
-        Return:
-            simple_cycles (list): a list of all simple cycles.
+    """ Find all simple cycles given a networkx graph.
+    Args:
+        dg (obj): a networkx directed graph
+    Return:
+        simple_cycles (list): a list of all simple cycles.
     """
     simple_cycles = [c for c in nx.simple_cycles(dg) if len(c) > 2]
     simple_cycles.sort(key=lambda cycle: len(cycle), reverse=True)
@@ -20,13 +20,13 @@ def find_simple_cycles(dg):
 
 def simple_cycles_to_string(simple_cycles):
     """ Convert simple cycles to a string.
-        Args:
-            simple_cycles (list): a list of lists
-        Returns:
-            None
+    Args:
+        simple_cycles (list of lists): a list of simple cycles.
+    Returns:
+        None
     """
     to_string = ''
-    to_string += 'Number of simple cycles: ' + str(len(simple_cycles))
+    to_string += 'Number of simple cycles: {}'.format(str(len(simple_cycles)))
     for c in simple_cycles:
         to_string += c
     to_string += '\n'
@@ -36,10 +36,10 @@ def simple_cycles_to_string(simple_cycles):
 def simple_cycle_to_string(graph, sc):
     """ Convert a simple cycle to a string.
     Args:
-        graph (obj): a networkx graph
+        graph (obj): a networkx directed graph
         sc (list): a simple cycle
     Returns:
-        None
+        to_string (str): string representation of the simple cycle
     """
     to_string = ''
     total_length = 0
@@ -67,11 +67,3 @@ def simple_cycle_to_string(graph, sc):
         to_string += str(sc[-1])
     to_string += str('\nLength: ' + str(total_length) + '\n')
     return to_string
-
-
-def main():
-    return
-
-
-if __name__ == '__main__':
-    main()

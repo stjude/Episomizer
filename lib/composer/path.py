@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This module contains functions about simple paths.
+This module contains functions to work with simple paths.
 """
 
 import networkx as nx
@@ -99,11 +99,3 @@ def rm_reverse_paths(simple_paths):
         if i % 2 == 1:
             left_paths.append(simple_paths[i])
     return left_paths
-
-
-def main():
-    return
-
-
-if __name__ == '__main__':
-    main()

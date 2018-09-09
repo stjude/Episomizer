@@ -4,6 +4,7 @@ This module contains functions to work with networkx graphs.
 """
 
 import networkx as nx
+import pybedtools
 
 
 def build_graph(cna_segment_file, linked_sv_file, **kwargs):
@@ -20,31 +21,32 @@ def build_graph(cna_segment_file, linked_sv_file, **kwargs):
             (edge attribute: type; segment edge attributes: Length and LogRatio)
     """
     # Read graph text file
-    non_segment_edges = []
+    linked_sv_edges = []
     with open(linked_sv_file, 'r') as fin:
         while True:
             line = fin.readline().rstrip()
             if not line:
                 break
-            non_segment_edges.append(tuple([v for v in line.split('\t')]))
+            linked_sv_edges.append(tuple([v for v in line.split('\t')]))
 
     # Create networkx graph object
     dg = nx.DiGraph()
 
     # Add two nodes for every segment; add segment edges
-    with open(cna_segment_file, 'r') as fin:
-        while True:
-            line = fin.readline().rstrip()
-            if not line:
-                break
-            tokens = line.split('\t')
-            dg.add_node(tokens[0])
-            dg.add_node(tokens[1])
-            dg.add_edge(tokens[0], tokens[1], type='SEG')
-            dg.add_edge(tokens[1], tokens[0], type='SEG')
+    cna_segments = pybedtools.BedTool(cna_segment_file)
+    for segment in cna_segments:
+        node_name1 = '{}L'.format(segment[3])
+        node_name2 = '{}R'.format(segment[3])
+        dg.add_node(node_name1)
+        dg.add_node(node_name2)
+        dg.add_edge(node_name1, node_name2, type='SEG')
+        dg.add_edge(node_name2, node_name1, type='SEG')
+        length = int(segment[2]) - int(segment[1])
+        dg[node_name1][node_name2]['Length'] = length
+        dg[node_name2][node_name1]['Length'] = length
 
     # Add non-segment edges. Use column 5 as edge type
-    for e in non_segment_edges:
+    for e in linked_sv_edges:
         dg.add_edge(e[0], e[1], type=e[5])
         dg.add_edge(e[1], e[0], type=e[5])
 
@@ -61,8 +63,6 @@ def build_graph(cna_segment_file, linked_sv_file, **kwargs):
                 length = int(tokens[3])
                 dg[segment + 'L'][segment + 'R']['LogRatio'] = log_ratio
                 dg[segment + 'R'][segment + 'L']['LogRatio'] = log_ratio
-                dg[segment + 'L'][segment + 'R']['Length'] = length
-                dg[segment + 'R'][segment + 'L']['Length'] = length
     return dg
 
 

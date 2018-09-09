@@ -58,22 +58,22 @@ def circ_handler(cna_segment_file, linked_sv_file, **kwargs):
             cna_segment_file (str): path to a bed file containing somatic copy number alteration segments.
             linked_sv_file (str): path to a tab-delimited text file containing linked structure variant boundaries.
         Optional keyword arguments:
-            sif_file (str): path to an output sif file (importable in Cytoscape).
-            circ_dm_file (str): path to an output circular double minute file.
+            out_sif_file (str): path to an output sif file (importable in Cytoscape).
+            out_dm_file (str): path to an output circular double minute file.
     Returns:
         None
     """
     # Build a directed graph
-    dg = graph.build_graph(linked_sv_file, cna_segment_file)
+    dg = graph.build_graph(cna_segment_file, linked_sv_file)
 
     # Output to a sif file if the argument exists
-    if kwargs['sif_file']:
-        output_graph_to_sif(dg, kwargs['sif_file'])
+    if kwargs['out_sif_file']:
+        output_graph_to_sif(dg, kwargs['out_sif_file'])
         sys.exit(0)
 
     # Find double mintues and output to a file if the argument exists
-    if kwargs['circ_dm_file']:
-        find_circular_double_minutes(dg, kwargs['circ_dm_file'])
+    if kwargs['out_dm_file']:
+        find_circular_double_minutes(dg, kwargs['out_dm_file'])
         sys.exit(0)
 
 

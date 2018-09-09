@@ -11,3 +11,12 @@ cycles as candidates of circular double minute structures.
 * [Python=3.6](https://www.python.org/downloads/release/python-360/)
 * [NetworkX=2.1](https://networkx.github.io/)
 * [pybedtools=0.7.10](https://daler.github.io/pybedtools/#getting-started)
+
+## Installation
+Installation is simply clone the repository to a working directory.
+
+## Usage
+
+## Maintainers
+* [Liang Ding](https://github.com/adamdingliang)
+* [Ke Xu](https://github.com/FromSoSimple)

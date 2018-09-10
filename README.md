@@ -13,7 +13,7 @@ cycles as candidates of circular double minute structures.
 * [pybedtools=0.7.10](https://daler.github.io/pybedtools/#getting-started)
 
 ## Installation
-Installation is simply clone the repository to a working directory.
+Installation is simply cloning bin and lib to a working directory and adding `$EPISOMIZER_HOME/bin` to `$PATH`.
 
 ## Usage
 

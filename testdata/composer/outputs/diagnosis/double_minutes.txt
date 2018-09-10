@@ -1,0 +1,209 @@
+Number of circular double minutes: 52
+Double minute 1:
+2L -s-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -s-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -a-> 39RL -a-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -d-> 24RL -s-> 14RL -a-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2R
+Length: 1780865
+
+Double minute 2:
+26L -s-> 2RL -a-> 1RL -c-> 20RL -a-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -a-> 6LR -a-> 7LR -a-> 8LR -a-> 9LR -a-> 10LR -b-> 43LR -a-> 44LR -s-> 21LR -a-> 22LR -s-> 36RL -a-> 35RL -s-> 31LR -a-> 32LR -s-> 28LR -a-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -a-> 12RL -s-> 26R
+Length: 1583517
+
+Double minute 3:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -s-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -b-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 1609716
+
+Double minute 4:
+26R -s-> 12LR -a-> 13LR -s-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -s-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -b-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 1592817
+
+Double minute 5:
+26L -s-> 2RL -a-> 1RL -c-> 20RL -a-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -c-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -a-> 12RL -s-> 26R
+Length: 1396420
+
+Double minute 6:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -b-> 35RL -s-> 31LR -s-> 37LR -a-> 38LR -a-> 39LR -a-> 40LR -a-> 41LR -a-> 42LR -a-> 43LR -a-> 44LR -s-> 21LR -c-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 1422619
+
+Double minute 7:
+26R -s-> 12LR -a-> 13LR -s-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -b-> 35RL -s-> 31LR -s-> 37LR -a-> 38LR -a-> 39LR -a-> 40LR -a-> 41LR -a-> 42LR -a-> 43LR -a-> 44LR -s-> 21LR -c-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 1405720
+
+Double minute 8:
+2L -s-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -a-> 30.bRL -s-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -d-> 24RL -s-> 14RL -a-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2R
+Length: 1392628
+
+Double minute 9:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -s-> 24LR -d-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -a-> 6LR -a-> 7LR -a-> 8LR -a-> 9LR -a-> 10LR -b-> 43LR -a-> 44LR -s-> 21LR -a-> 22LR -s-> 36RL -a-> 35RL -s-> 31LR -a-> 32LR -s-> 28LR -a-> 29LR -s-> 2LR -s-> 26L
+Length: 1195375
+
+Double minute 10:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -b-> 35RL -a-> 34RL -s-> 40LR -a-> 41LR -a-> 42LR -a-> 43LR -a-> 44LR -s-> 21LR -c-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 1310722
+
+Double minute 11:
+27L -c-> 5LR -c-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -s-> 27R
+Length: 1236622
+
+Double minute 12:
+26L -s-> 2RL -a-> 1RL -c-> 20RL -a-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -a-> 6LR -b-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -a-> 12RL -s-> 26R
+Length: 1211924
+
+Double minute 13:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -b-> 35RL -s-> 31LR -s-> 37LR -a-> 38LR -a-> 39LR -a-> 40LR -b-> 6RL -a-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 1238123
+
+Double minute 14:
+27R -s-> 9LR -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -s-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -b-> 35RL -s-> 31LR -s-> 37LR -a-> 38LR -a-> 39LR -a-> 40LR -a-> 41LR -a-> 42LR -a-> 43LR -a-> 44LR -s-> 21LR -c-> 5RL -c-> 27L
+Length: 1125724
+
+Double minute 15:
+27L -c-> 5LR -c-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -a-> 39RL -a-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -d-> 24RL -s-> 14RL -a-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -s-> 27R
+Length: 957877
+
+Double minute 16:
+27L -c-> 5LR -a-> 6LR -b-> 40RL -a-> 39RL -a-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -s-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -b-> 10RL -a-> 9RL -s-> 27R
+Length: 1349423
+
+Double minute 17:
+26L -s-> 2RL -a-> 1RL -c-> 20RL -a-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -a-> 6LR -b-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -s-> 13RL -a-> 12RL -s-> 26R
+Length: 1195025
+
+Double minute 18:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -s-> 24LR -d-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -c-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -s-> 2LR -s-> 26L
+Length: 1008278
+
+Double minute 19:
+27L -c-> 5LR -c-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -s-> 34LR -a-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -s-> 27R
+Length: 1124725
+
+Double minute 20:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -b-> 35RL -a-> 34RL -s-> 40LR -b-> 6RL -a-> 5RL -a-> 4RL -s-> 25RL -s-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 1126226
+
+Double minute 21:
+2R -a-> 3LR -a-> 4LR -a-> 5LR -a-> 6LR -a-> 7LR -a-> 8LR -a-> 9LR -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -a-> 20LR -c-> 1LR -a-> 2L
+Length: 754881
+
+Double minute 22:
+2L -a-> 1RL -c-> 20RL -a-> 19RL -a-> 18RL -a-> 17RL -s-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2R
+Length: 851780
+
+Double minute 23:
+27R -s-> 9LR -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -b-> 35RL -s-> 31LR -s-> 37LR -a-> 38LR -a-> 39LR -a-> 40LR -b-> 6RL -a-> 5RL -c-> 27L
+Length: 958127
+
+Double minute 24:
+27L -c-> 5LR -a-> 6LR -b-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -s-> 27R
+Length: 1052126
+
+Double minute 25:
+36R -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -a-> 39RL -a-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -s-> 35LR -a-> 36L
+Length: 1343426
+
+Double minute 26:
+26L -s-> 2RL -a-> 1RL -c-> 20RL -a-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -a-> 6LR -b-> 40RL -s-> 34LR -a-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -s-> 13RL -a-> 12RL -s-> 26R
+Length: 1083128
+
+Double minute 27:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -s-> 24LR -d-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -c-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -s-> 34LR -a-> 35LR -b-> 29LR -s-> 2LR -s-> 26L
+Length: 896381
+
+Double minute 28:
+2R -a-> 3LR -a-> 4LR -a-> 5LR -a-> 6LR -a-> 7LR -a-> 8LR -a-> 9LR -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -s-> 15LR -a-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -a-> 20LR -c-> 1LR -a-> 2L
+Length: 737982
+
+Double minute 29:
+2L -a-> 1RL -c-> 20RL -a-> 19RL -a-> 18RL -a-> 17RL -s-> 16RL -a-> 15RL -s-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -a-> 8RL -a-> 7RL -a-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2R
+Length: 834881
+
+Double minute 30:
+27R -s-> 9LR -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -a-> 14LR -s-> 24LR -d-> 19RL -a-> 18RL -a-> 17RL -s-> 16RL -s-> 23LR -b-> 33LR -s-> 38LR -a-> 39LR -a-> 40LR -b-> 6RL -a-> 5RL -c-> 27L
+Length: 679382
+
+Double minute 31:
+27L -c-> 5LR -a-> 6LR -b-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -s-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -s-> 27R
+Length: 1035227
+
+Double minute 32:
+26L -s-> 2RL -s-> 29RL -a-> 28RL -s-> 32RL -a-> 31RL -a-> 30.bRL -s-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -d-> 24RL -s-> 14RL -a-> 13RL -a-> 12RL -s-> 26R
+Length: 1142837
+
+Double minute 33:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -s-> 24LR -d-> 19RL -a-> 18RL -a-> 17RL -s-> 16RL -s-> 23LR -b-> 33LR -s-> 38LR -s-> 30.bLR -a-> 31LR -a-> 32LR -s-> 28LR -a-> 29LR -s-> 2LR -s-> 26L
+Length: 1169036
+
+Double minute 34:
+27L -c-> 5LR -a-> 6LR -b-> 40RL -s-> 34LR -a-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -a-> 14RL -a-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -s-> 27R
+Length: 940229
+
+Double minute 35:
+2R -a-> 3LR -a-> 4LR -a-> 5LR -a-> 6LR -b-> 40RL -a-> 39RL -a-> 38RL -s-> 33RL -b-> 23RL -s-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -a-> 20LR -c-> 1LR -a-> 2L
+Length: 680585
+
+Double minute 36:
+2L -a-> 1RL -c-> 20RL -a-> 19RL -a-> 18RL -a-> 17RL -s-> 16RL -s-> 23LR -b-> 33LR -s-> 38LR -a-> 39LR -a-> 40LR -b-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2R
+Length: 777484
+
+Double minute 37:
+27R -s-> 9LR -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -s-> 15LR -a-> 16LR -s-> 17LR -d-> 30.aRL -a-> 29RL -b-> 35RL -a-> 34RL -s-> 40LR -b-> 6RL -a-> 5RL -c-> 27L
+Length: 829331
+
+Double minute 38:
+27L -c-> 5LR -a-> 6LR -b-> 40RL -s-> 34LR -a-> 35LR -b-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -a-> 15RL -s-> 13RL -a-> 12RL -a-> 11RL -a-> 10RL -a-> 9RL -s-> 27R
+Length: 923330
+
+Double minute 39:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -s-> 24LR -d-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -a-> 6LR -b-> 40RL -s-> 34LR -a-> 35LR -b-> 29LR -s-> 2LR -s-> 26L
+Length: 711885
+
+Double minute 40:
+9R -a-> 10LR -a-> 11LR -a-> 12LR -a-> 13LR -a-> 14LR -s-> 24LR -d-> 19RL -s-> 25LR -s-> 4LR -a-> 5LR -a-> 6LR -a-> 7LR -a-> 8LR -a-> 9L
+Length: 405486
+
+Double minute 41:
+2L -s-> 29RL -b-> 35RL -a-> 34RL -s-> 40LR -a-> 41LR -a-> 42LR -a-> 43LR -a-> 44LR -s-> 21LR -c-> 5RL -a-> 4RL -a-> 3RL -a-> 2R
+Length: 714487
+
+Double minute 42:
+27L -c-> 5LR -a-> 6LR -b-> 40RL -s-> 34LR -a-> 35LR -a-> 36LR -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -b-> 10RL -a-> 9RL -s-> 27R
+Length: 592387
+
+Double minute 43:
+36R -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -a-> 39RL -a-> 38RL -a-> 37RL -s-> 31RL -s-> 35LR -a-> 36L
+Length: 698287
+
+Double minute 44:
+26R -s-> 12LR -a-> 13LR -a-> 14LR -a-> 15LR -a-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 628188
+
+Double minute 45:
+2L -s-> 29RL -b-> 35RL -s-> 31LR -s-> 37LR -a-> 38LR -a-> 39LR -a-> 40LR -b-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2R
+Length: 641888
+
+Double minute 46:
+26R -s-> 12LR -a-> 13LR -s-> 15LR -a-> 16LR -s-> 17LR -a-> 18LR -a-> 19LR -a-> 20LR -c-> 1LR -a-> 2LR -s-> 26L
+Length: 611289
+
+Double minute 47:
+31R -a-> 32LR -s-> 28LR -a-> 29LR -a-> 30.aLR -d-> 17RL -s-> 16RL -s-> 23LR -b-> 33LR -s-> 38LR -s-> 30.bLR -a-> 31L
+Length: 955189
+
+Double minute 48:
+36R -s-> 22RL -a-> 21RL -s-> 44RL -a-> 43RL -a-> 42RL -a-> 41RL -a-> 40RL -s-> 34LR -a-> 35LR -a-> 36L
+Length: 586390
+
+Double minute 49:
+2L -s-> 29RL -b-> 35RL -a-> 34RL -s-> 40LR -b-> 6RL -a-> 5RL -a-> 4RL -a-> 3RL -a-> 2R
+Length: 529991
+
+Double minute 50:
+27L -c-> 5LR -c-> 21RL -s-> 44RL -a-> 43RL -b-> 10RL -a-> 9RL -s-> 27R
+Length: 190493
+
+Double minute 51:
+31R -a-> 32LR -s-> 28LR -a-> 29LR -a-> 30.aLR -a-> 30.bLR -a-> 31L
+Length: 639994
+
+Double minute 52:
+31R -s-> 37LR -a-> 38LR -s-> 30.bLR -a-> 31L
+Length: 310050
+

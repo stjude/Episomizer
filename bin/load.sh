@@ -9,14 +9,12 @@ then
 fi
 
 EPISOMIZER_HOME=$1
-# Check if EPISOMIZER_HOME has been set 
 if [ -z "$EPISOMIZER_HOME" ]; then
     echo "Error: EPISOMIZER_HOME not set" >&2
     return 1
     exit 1
 fi
 
-# Add paths to environmental variables
 prepend() {
   echo "$1" | tr : '\n' | awk -v new="`readlink -f $2`$3" 'BEGIN { print new } $0 != new { print }' | tr '\n' : | sed 's/:$//'
 }
@@ -29,7 +27,7 @@ addpython() {
 addperl() {
   if [ -d $1 ]; then NEWPERL5LIB=$(prepend "$PERL5LIB" "$1"); export PERL5LIB="$NEWPERL5LIB"; fi
 }
-addpython $EPISOMIZER_HOME/lib/composer
-addbin $EPISOMIZER_HOME/bin
 
+addpython $EPISOMIZER_HOME/src/composer
+addbin $EPISOMIZER_HOME/bin
 echo "Sourcing completed successfully"

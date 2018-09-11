@@ -1,5 +1,13 @@
 # Episomizer
-Episome composer takes inputs of highly amplified somatic copy number alteration (CNA) segments and
+Episomizer is currently a semi-automated pipeline for constructing double minutes (a.k.a. episome) 
+using WGS data. The challenge to fully automate the entire process drives from the varying 
+complexity of genomic rearrangements in different tumor samples.
+
+Episomizer consists of two major components:
+* Bam mining extracts highly amplified genomic segments based on the copy number data, refine the 
+segment boundaries and calculate precise number of supporting reads for each manual inspected 
+structure variation that links a pair of segment boundaries.
+* Composer takes inputs of highly amplified somatic copy number alteration (CNA) segments and
 structure variants (SV) associated with the segment boundaries, composes the segments to form simple
 cycles as candidates of circular double minute structures.
 

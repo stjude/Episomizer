@@ -33,7 +33,12 @@ $ export PATH=$EPISOMIZER_HOME/bin:$PATH
 Usage:
     episomizer <SUBCOMMAND> [args...]
 Subcommands:
-    create_samtools_cmd   Create samtools command file to extract reads around boundaries of CNA segments
+    create_samtools_cmd    Create samtools command file to extract reads around boundaries of CNA segments
+    create_softclip2fa_cmd Create command file to extract softclip reads
+    create_blat_cmd        Create command file to blat softclip reads
+    SV_softclip            Create a matrix for softclip reads
+    SV_discordant          Create a matrix for discordant reads
+    SV_bridge              Create a matrix for bridging discordant reads
 ```
 For details on how to run the semi-automated pipeline, see the following [Procedure](#Procedure) section.
 

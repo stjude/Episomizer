@@ -59,7 +59,7 @@ distribution).
 
 2. Generate the shell script to extract softclip reads.
     ```
-    $ create_softclip2fa_cmd.pl INPUT_CNA_BED OUTPUT_DIR
+    $ episomizer create_softclip2fa_cmd INPUT_CNA_BED OUTPUT_DIR
     ```
     Run the shell script.
     ```
@@ -68,7 +68,7 @@ distribution).
     
 3. Generate the shell script to blat the softclip reads.
     ```
-    create_blat_cmd.pl REF_GENOME_BIT INPUT_CNA_BED OUTPUT_DIR
+    $ episomizer create_blat_cmd REF_GENOME_BIT INPUT_CNA_BED OUTPUT_DIR
     ```
     The reference genome GRCh37-lite.2bit can be downloaded from 
     [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit).

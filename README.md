@@ -5,7 +5,7 @@ complexity of genomic rearrangements in different tumor samples.
 
 Episomizer consists of two major components:
 * Bam mining extracts highly amplified genomic segments based on the copy number data, refine the 
-segment boundaries and calculate precise number of supporting reads for each manual inspected 
+segment boundaries and calculates precise number of supporting reads for each manual inspected 
 structure variation that links a pair of segment boundaries.
 * Composer takes inputs of highly amplified somatic copy number alteration (CNA) segments and
 structure variants (SV) associated with the segment boundaries, composes the segments to form simple
@@ -21,9 +21,39 @@ cycles as candidates of circular double minute structures.
 * [pybedtools=0.7.10](https://daler.github.io/pybedtools/#getting-started)
 
 ## Installation
-Installation is simply cloning bin and lib to a working directory and adding `$EPISOMIZER_HOME/bin` to `$PATH`.
+Installation is simply cloning of the repository to a working directory and 
+adding `$EPISOMIZER_HOME/bin` to `$PATH`.
+```
+$ EPISOMIZER_HOME=<path_to_working_dir>
+$ export PATH=$EPISOMIZER_HOME/bin:$PATH
+```
 
 ## Usage
+```
+Usage:
+    episomizer <SUBCOMMAND> [args...]
+Subcommands:
+    create_samtools_cmd   Create samtools command file to extract reads around boundaries of CNA segments
+```
+For details on how to run the semi-automated pipeline, see the following [Procedure](#Procedure) section.
+
+## Procedure
+**Step 1:** Determine a threshold for highly amplified genomic segments based on the copy number data 
+(we used Log2Ratio > 4 based on the [CONSERTING](https://www.nature.com/articles/nmeth.3394) Log2Ratio 
+distribution).
+
+**Step 2:** Get the putative edges.
+1. Generate the shell script with samtools commands and the intermediate folder in 
+   the given output directory.
+    ```
+    $ episomizer create_samtools_cmd INPUT_BAM INPUT_CNA_BED OUTPUT_DIR
+    ```
+    Run the shell script.
+    ```
+    $ OUTPUT_DIR/run_samtools.sh 
+    ```
+
+2. To do...
 
 ## Maintainers
 * [Liang Ding](https://github.com/adamdingliang)

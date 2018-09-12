@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Author: Liang (Adam) Ding, PhD
+
 EPISOMIZER_HOME=$(dirname $(dirname $(readlink -f $0)))
 if [ -z "$EPISOMIZER_HOME" ]; then
     echo "Error: EPISOMIZER_HOME is empty" >&2
@@ -27,7 +29,12 @@ usage() {
    echo "Usage:"
    echo "    episomizer <SUBCOMMAND> [args...]"
    echo "Subcommands:"
-   echo "    create_samtools_cmd   Create samtools command file to extract reads around boundaries of CNA segments"
+   echo "    create_samtools_cmd    Create samtools command file to extract reads around boundaries of CNA segments"
+   echo "    create_softclip2fa_cmd Create command file to extract softclip reads"
+   echo "    create_blat_cmd        Create command file to blat softclip reads"
+   echo "    SV_softclip            Create a matrix for softclip reads"
+   echo "    SV_discordant          Create a matrix for discordant reads"
+   echo "    SV_bridge              Create a matrix for bridging discordant reads"
    exit 1
 }
 
@@ -41,5 +48,10 @@ SUBCOMMAND=$1
 
 case $SUBCOMMAND in
     create_samtools_cmd) ${SUBCOMMAND}.pl ${@:2} ;;
+    create_softclip2fa_cmd) ${SUBCOMMAND}.pl ${@:2} ;;
+    create_blat_cmd) ${SUBCOMMAND}.pl ${@:2} ;;
+    SV_softclip) ${SUBCOMMAND}.pl ${@:2} ;;
+    SV_discordant) ${SUBCOMMAND}.pl ${@:2} ;;
+    SV_bridge) ${SUBCOMMAND}.pl ${@:2} ;;
     *) usage ;;
 esac

@@ -1,24 +1,26 @@
-#!/hpcf/apps/perl/install/5.10.1/bin/perl
+#!/usr/bin/env perl
 
-#This file is part of Episomizer.
+# This file is part of Episomizer.
+# Author: Ke (Corey) Xu, PhD and Liang (Adam) Ding, PhD
+# Contact: kxu101@gmail.com
 
-#Author: Ke (Corey) Xu, PhD
-#Contact: kxu101@gmail.com
+use strict;
+use warnings;
 
-
-$input1 = $ARGV[0];
-$output1 = $ARGV[1];
+my $input1 = $ARGV[0];
+my $output1 = $ARGV[1];
 
 open(IN_1, $input1); 
-@in1 = <IN_1>; 
+my @in1 = <IN_1>;
 close IN_1;
 
 open(OUT1, ">$output1");
 
-for ($i=0; $i<=$#in1; $i++) {
+for (my $i=0; $i<=$#in1; $i++) {
 	chop $in1[$i];
-	@row = split(/\t/, $in1[$i]);
+	my @row = split(/\t/, $in1[$i]);
 	#@field = split(/hr/, $row[0]);
+    my $pound;
 	if($row[5] =~ m/S/) {
 		if(($row[10] =~ m/^#/)&&($row[10] =~ m/#$/)) {
 			$pound = "poundboth";			

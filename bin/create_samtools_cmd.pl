@@ -42,5 +42,5 @@ for (my $i=0; $i<=$#in1; $i++) {
 }
 
 close OUT1;
-print STDERR "Samtools commands created successfully.\n";
+print STDERR "Samtools command file was created successfully: ".$output_dir."/run_samtools.sh";
 exit;

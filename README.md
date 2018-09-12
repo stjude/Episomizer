@@ -43,8 +43,7 @@ For details on how to run the semi-automated pipeline, see the following [Proced
 distribution).
 
 **Step 2:** Get the putative edges.
-1. Generate the shell script with samtools commands and the intermediate folder in 
-   the given output directory.
+1. Generate the shell script with samtools commands to extract the reads around segment boundaries.
     ```
     $ episomizer create_samtools_cmd INPUT_BAM INPUT_CNA_BED OUTPUT_DIR
     ```
@@ -53,7 +52,28 @@ distribution).
     $ OUTPUT_DIR/run_samtools.sh 
     ```
 
-2. To do...
+2. Generate the shell script to extract softclip reads.
+    ```
+    $ create_softclip2fa_cmd.pl INPUT_CNA_BED OUTPUT_DIR
+    ```
+    Run the shell script.
+    ```
+    $ OUTPUT_DIR/run_softclip2fa.sh
+    ```
+    
+3. Generate the shell script to blat the softclip reads.
+    ```
+    create_blat_cmd.pl REF_GENOME_BIT INPUT_CNA_BED OUTPUT_DIR
+    ```
+    The reference genome GRCh37-lite.2bit can be downloaded from 
+    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit).
+    
+    Run the shell script (recommend parallel processing).
+    ```
+    $ OUTPUT_DIR/run_BLAT.sh
+    ```
+    
+
 
 ## Maintainers
 * [Liang Ding](https://github.com/adamdingliang)

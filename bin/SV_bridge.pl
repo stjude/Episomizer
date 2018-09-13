@@ -77,7 +77,7 @@ foreach my $file0 (@files) {
 							$flag = 1;							
 						}
 					}
-					if($tmp[6] ne "=") {		                                              # added this block on 2018/08/27 for SVs like TCGA-0152-D (1L - 6L)
+					if($tmp[6] ne "=") {		                                              
 						if (($tmp[6] eq $row[2]) && (abs($tmp[7] - $row[7]) < $distance)) {   
 							$flag = 1;
 						}
@@ -92,7 +92,7 @@ foreach my $file0 (@files) {
 							$flag = 1;					
 						} 
 					}
-					if(($tmp2[6] eq "=") && (abs($tmp2[8]) > $TLEN)) {	                       # added this block on 2018/08/27 for SVs like TCGA-0152-D (1L - 6L)	
+					if(($tmp2[6] eq "=") && (abs($tmp2[8]) > $TLEN)) {	                       	
 						if(($tmp2[2] eq $row[6]) && (abs($tmp2[7] - $row[7]) < $distance)) {   
 							$flag = 1;					
 						} 

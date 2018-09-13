@@ -39,6 +39,8 @@ Subcommands:
     SV_softclip            Create read count matrix using softclip reads
     SV_discordant          Create read count matrix using discordant reads
     SV_bridge              Create read count matrix using bridging discordant reads
+    matrix2edges           Produce edges to connect SVs based on read count matrices
+    composer               Compose segments and edges to form circular double minute
 ```
 For details on how to run the semi-automated pipeline, see the following [Procedure](#Procedure) section.
 

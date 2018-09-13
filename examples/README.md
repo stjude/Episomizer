@@ -23,9 +23,8 @@ descriptions about all the example input files, see [input](../testdata/input/RE
 ([CNA_boundary_reads](../testdata/intmd/trace/CNA_boundary_reads)) in 
     the given output directory.
     ```
-    $ episomizer create_samtools_cmd ./testdata/input/mini_SJHGG019_S.bam ./testdata/input/CNA_region_raw_D.bed 
-    ./testdata/intmd/trace
-    Samtools commands created successfully.
+    $ episomizer create_samtools_cmd ./testdata/input/mini_SJHGG019_S.bam ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
+    
     ```
     Run the shell script.
     ```
@@ -50,9 +49,9 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     $ episomizer create_blat_cmd GRCh37-lite.2bit ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
     ```
     The reference genome GRCh37-lite.2bit can be downloaded from 
-    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit).
+    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit). It should be placed under the working directory.
     
-    Run the shell script (recommend parallel processing).
+    Run the shell script (parallel processing is recommended).
     ```
     $ ./testdata/intmd/trace/run_BLAT.sh
     ```
@@ -61,7 +60,7 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
     $ episomizer SV_softclip ./testdata/input/CNA_region_raw_R.bed 1000 ./testdata/intmd/trace/CNA_boundary_softclip_BLAT ./testdata/intmd/trace
     $ episomizer SV_discordant ./testdata/input/CNA_region_raw_R.bed 800 1000 ./testdata/intmd/trace/CNA_boundary_reads ./testdata/intmd/trace
-    $ episomizer SV_bridge ./testdata/input/CNA_region_raw_R.bed 800 1000 ./testdata/intmd/trace/CNA_boundary_reads ./testdata/intmd/trace
+    $ episomizer SV_bridge ./testdata/input/CNA_region_raw_R.bed 800 10000 ./testdata/intmd/trace/CNA_boundary_reads ./testdata/intmd/trace
     ```
     
 5. Produce edges to connect SVs based on read count matrices.

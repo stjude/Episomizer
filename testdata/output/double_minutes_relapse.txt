@@ -1,0 +1,29 @@
+Number of circular double minutes: 7
+Double minute 1:
+7L -b-> 6LR -s-> 3RL -s-> 1RL -s-> 2LR -s-> 12RL -a-> 11RL -s-> 4LR -a-> 5LR -s-> 14LR -a-> 15LR -a-> 16LR -d-> 24LR -a-> 25LR -d-> 28LR -a-> 29LR -s-> 20RL -a-> 19RL -s-> 9RL -a-> 8RL -a-> 7R
+Length: 1887780
+
+Double minute 2:
+7L -b-> 6LR -s-> 3RL -s-> 1RL -s-> 2LR -s-> 12RL -a-> 11RL -s-> 4LR -a-> 5LR -s-> 14LR -s-> 10RL -a-> 9RL -a-> 8RL -a-> 7R
+Length: 719287
+
+Double minute 3:
+21L -a-> 20RL -a-> 19RL -s-> 9RL -s-> 27RL -a-> 26RL -a-> 25RL -a-> 24RL -a-> 23RL -a-> 22RL -a-> 21R
+Length: 932290
+
+Double minute 4:
+27R -s-> 9LR -s-> 19LR -a-> 20LR -s-> 29RL -a-> 28RL -d-> 25RL -a-> 24RL -d-> 16RL -s-> 27L
+Length: 973991
+
+Double minute 5:
+10R -s-> 14RL -a-> 13RL -c-> 18RL -s-> 17RL -a-> 16RL -s-> 27LR -s-> 9LR -a-> 10L
+Length: 657192
+
+Double minute 6:
+15L -a-> 14RL -a-> 13RL -c-> 18RL -s-> 17RL -a-> 16RL -a-> 15R
+Length: 851694
+
+Double minute 7:
+27R -s-> 9LR -s-> 19LR -s-> 22RL -s-> 25LR -a-> 26LR -a-> 27L
+Length: 403194
+

@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+# Author: Liang (Adam) Ding, PhD
+
+EPISOMIZER_HOME=$(dirname $(dirname $(readlink -f $0)))
+if [ -z "$EPISOMIZER_HOME" ]; then
+    echo "Error: EPISOMIZER_HOME must be set" >&2
+    return 1
+    exit 1
+fi
+
+prepend() {
+  echo "$1" | tr : '\n' | awk -v new="`readlink -f $2`$3" 'BEGIN { print new } $0 != new { print }' | tr '\n' : | sed 's/:$//'
+}
+addbin() {
+  if [ -d $1 ]; then NEWPATH=$(prepend "$PATH" "$1"); export PATH="$NEWPATH"; fi
+}
+addpython() {
+  if [ -d $1 ]; then NEWPYTHONPATH=$(prepend "$PYTHONPATH" "$1"); export PYTHONPATH="$NEWPYTHONPATH"; fi
+}
+addperl() {
+  if [ -d $1 ]; then NEWPERL5LIB=$(prepend "$PERL5LIB" "$1"); export PERL5LIB="$NEWPERL5LIB"; fi
+}
+
+addpython $EPISOMIZER_HOME/lib/python
+addbin $EPISOMIZER_HOME/bin
+
+usage() {
+   echo "Usage:"
+   echo "    episomizer <SUBCOMMAND> [args...]"
+   echo "Subcommands:"
+   echo "    create_samtools_cmd    Create samtools command file to extract reads around boundaries of CNA segments"
+   echo "    create_softclip2fa_cmd Create command file to extract softclip reads"
+   echo "    create_blat_cmd        Create command file to blat softclip reads"
+   echo "    SV_softclip            Create read count matrix using softclip reads"
+   echo "    SV_discordant          Create read count matrix using discordant reads"
+   echo "    SV_bridge              Create read count matrix using bridging discordant reads"
+   echo "    matrix2edges           Produce edges to connect SVs based on read count matrices"
+   echo "    composer               Compose segments and edges to form circular double minutes"
+   exit 1
+}
+
+if [ "$#" == 0 ]; then
+    usage
+    return 1
+    exit 1
+fi
+
+SUBCOMMAND=$1
+
+case $SUBCOMMAND in
+    create_samtools_cmd) ${SUBCOMMAND}.pl ${@:2} ;;
+    create_softclip2fa_cmd) ${SUBCOMMAND}.pl ${@:2} ;;
+    create_blat_cmd) ${SUBCOMMAND}.pl ${@:2} ;;
+    SV_softclip) ${SUBCOMMAND}.pl ${@:2} ;;
+    SV_discordant) ${SUBCOMMAND}.pl ${@:2} ;;
+    SV_bridge) ${SUBCOMMAND}.pl ${@:2} ;;
+    matrix2edges) ${SUBCOMMAND}.R ${@:2} ;;
+    composer) ${SUBCOMMAND}.py ${@:2} ;;
+    *) usage ;;
+esac

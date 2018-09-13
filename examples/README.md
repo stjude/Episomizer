@@ -1,7 +1,7 @@
 # Usage Example
-This is an example to use [Episomizer](../README.md) to construct double minutes on the mini-bam file created by 
-down-sampling on the relapse sample (SJHGG019_S). For the general usage information, 
-see [Episomizer](../README.md) home page.
+This page shows an example of applying the procedure described in [Episomizer](../README.md) page to construct 
+double minutes on the mini-bam file created by down-sampling on the relapse sample (SJHGG019_S). For the general
+usage information, see [Episomizer](../README.md) home page.
 
 # Set Environment
 Set `$EPISOMIZER_HOME` to the cloned directory, add bin path to `$PATH` and enter `$EPISOMIZER_HOME`

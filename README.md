@@ -42,7 +42,8 @@ Subcommands:
     matrix2edges           Produce edges to connect SVs based on read count matrices
     composer               Compose segments and edges to form circular double minute
 ```
-For details on how to run the semi-automated pipeline, see the following [Procedure](#Procedure) section.
+For details on how to run the semi-automated pipeline, see the following [Procedure](#Procedure) section. For a
+concrete example of constructing double minutes on a mini-bam, see [examples](./examples/README.md) page.
 
 ## Procedure
 **Step 1:** Determine a threshold for highly amplified genomic segments based on the copy number data 

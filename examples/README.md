@@ -1,7 +1,8 @@
 # Usage Example
 This page shows an example of applying the procedure described in [Episomizer](../README.md) page to construct 
-double minutes on the mini-bam file created by down-sampling on the relapse sample (SJHGG019_S). For the general
-usage information, see [Episomizer](../README.md) home page.
+circular DNA structures on the mini-bam file created by simply keeping the reads around the CNA segment boundaries 
+of the relapse sample from a pediatric HGG patient (SJHGG019_S). 
+For the general usage information, see [Episomizer](../README.md) home page.
 
 ## Set Environment
 Set `$EPISOMIZER_HOME` to the cloned directory, add bin path to `$PATH` and enter `$EPISOMIZER_HOME`
@@ -79,9 +80,9 @@ Please follow the instruction in [Episomizer](../README.md) home page. The revie
 $ episomizer composer circ -c ./testdata/intmd/reviewed_data/Reviewed_segments_for_graph_relapse_rawCNA.txt -l ./testdata/intmd/reviewed_data/Reviewed_edges_for_graph_relapse_rawCNA.txt -d ./testdata/output/double_minutes_relapse.txt
 ```
 
-## Notes on the diagnosis sample (SJHGG019)
+## Notes on the diagnosis sample (SJHGG019_E)
 We used the same workflow to generate putative edges for the diagnosis sample, but since the sequencing coverage 
-for the diagnosis sample is much choppier, the SCNA segments boundaries are not as accurate as the relapse sample, 
+for the diagnosis sample is much choppier, the CNA segments boundaries are not as accurate as the relapse sample, 
 which influenced the identification of a few SVs. After manual review of the reads and their Blat results, together 
 with the Chromium data, we rescued eight missed SVs. The review process can be viewed 
 at [edges_review_diagnosis_rawCNA.xlsx](../testdata/intmd/reviewed_data/edges_review_diagnosis_rawCNA.xlsx).  

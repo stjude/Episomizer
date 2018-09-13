@@ -14,11 +14,13 @@ $ cd $EPISOMIZER_HOME
 
 ## Procedure
 **Step 1:** We used Log2Ratio > 4 based on the [CONSERTING](https://www.nature.com/articles/nmeth.3394) Log2Ratio 
-distribution to determine the highly amplified genomic segments (file `testdata/input/CNA_region_raw_D.bed`). For
+distribution to determine the highly amplified genomic segments 
+(file [CNA_region_raw_R.bed](../testdata/input/CNA_region_raw_R.bed)). For
 descriptions about all the example input files, see [input](../testdata/input/README.md) page.
 
 **Step 2:** Get the putative edges.
-1. Generate the shell script with samtools commands and the intermediate folder (`CNA_boundary_reads`) in 
+1. Generate the shell script with samtools commands and the intermediate folder 
+([CNA_boundary_reads](../testdata/intmd/trace/CNA_boundary_reads)) in 
     the given output directory.
     ```
     $ episomizer create_samtools_cmd ./testdata/input/mini_SJHGG019_S.bam ./testdata/input/CNA_region_raw_D.bed 
@@ -30,7 +32,8 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     $ ./testdata/intmd/trace/run_samtools.sh
     ```
     
-2. Generate the shell script to extract softclip reads and the intermediate folder (`CNA_boundary_softclip_fa`) in
+2. Generate the shell script to extract softclip reads and the intermediate folder 
+([CNA_boundary_softclip_fa](../testdata/intmd/trace/CNA_boundary_softclip_fa)) in
     the given output directory.
     ```
     $ episomizer create_softclip2fa_cmd ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
@@ -40,7 +43,8 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     $ ./testdata/intmd/trace/run_softclip2fa.sh
     ```
     
-3. Generate the shell script to blat the softclip reads and the intermediate folder (`CNA_boundary_softclip_BLAT`) in
+3. Generate the shell script to blat the softclip reads and the intermediate folder 
+([CNA_boundary_softclip_BLAT](../testdata/intmd/trace/CNA_boundary_softclip_BLAT)) in
     the given output directory.
     ```
     $ episomizer create_blat_cmd GRCh37-lite.2bit ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
@@ -68,8 +72,8 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
  
 **Step 3:** Manually review the putative edges.
-Please follow the instruction in [Episomizer](../README.md) home page. The review process is summarized in the 
-excel file `./testdata/intmd/reviewed_data/edges_review_relapse_rawCNA.xlsx`.
+Please follow the instruction in [Episomizer](../README.md) home page. The review process is summarized in 
+[edges_review_relapse_rawCNA.xlsx](./testdata/intmd/reviewed_data/edges_review_relapse_rawCNA.xlsx).
 
 **Step 4:** Compose circular double minute structures.
 ```

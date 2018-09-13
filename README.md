@@ -1,15 +1,17 @@
 # Episomizer
-Episomizer is currently a semi-automated pipeline for constructing double minutes (a.k.a. episome) 
-using WGS data. The challenge to fully automate the entire process drives from the varying 
-complexity of genomic rearrangements in different tumor samples.
+Episomizer is currently a semi-automated pipeline for constructing double minutes (aka. episome) 
+using WGS data. The challenge to fully automate the entire process lies in the varying 
+complexity of genomic rearrangements and inaccurate boundaries of copy number segments that require 
+manual review.
 
 Episomizer consists of two major components:
-* Bam mining extracts highly amplified genomic segments based on the copy number data, refine the 
-segment boundaries and calculates precise number of supporting reads for each manual inspected 
-structure variation that links a pair of segment boundaries.
-* Composer takes inputs of highly amplified somatic copy number alteration (CNA) segments and
-structure variants (SV) associated with the segment boundaries, composes the segments to form simple
-cycles as candidates of circular double minute structures.
+* Bam mining extract the reads around the boundaries of highly amplified genomic regions, 
+search for evidence of soft-clipped reads, discordant reads, and bridge reads that support 
+putative SVs (aka. edges) between any two segment boundaries. The putative edges are then subject 
+to manual review. 
+* Composer takes inputs of manually reviewed SVs associated with the segment boundaries together 
+with the highly amplified genomic segments, composes the segments to form simple
+cycles as candidates of circular DNA structures.
 
 ## Prerequisites
 * [Perl=5.10.1](https://www.perl.org/)
@@ -46,9 +48,8 @@ For details on how to run the semi-automated pipeline, see the following [Proced
 concrete example of constructing double minutes on a mini-bam, see [examples](./examples/README.md) page.
 
 ## Procedure
-**Step 1:** Determine a threshold for highly amplified genomic segments based on the copy number data 
-(we used Log2Ratio > 4 based on the [CONSERTING](https://www.nature.com/articles/nmeth.3394) Log2Ratio 
-distribution).
+**Step 1:** Determine a threshold for highly amplified genomic segments based on the empirical distribution
+  of Log2Ratio of copy number data.
 
 **Step 2:** Get the putative edges.
 1. Generate the shell script with samtools commands to extract the reads around segment boundaries.
@@ -84,8 +85,8 @@ distribution).
  4. Create 3 read count matrices using softclip reads, discordant reads and bridging discordant reads.
     ```
     $ episomizer SV_softclip INPUT_CNA_BED FLANK SOFTCLIP_BLAT_DIR OUTPUT_DIR
-    $ episomizer SV_discordant INPUT_CNA_BED FLANK SOFTCLIP_BLAT_DIR OUTPUT_DIR
-    $ episomizer SV_bridge INPUT_CNA_BED TLEN DISTANCE CNA_BOUNDARY_DIR OUTPUT_DIR
+    $ episomizer SV_discordant INPUT_CNA_BED TLEN FLANK BOUNDARY_READS_DIR OUTPUT_DIR
+    $ episomizer SV_bridge INPUT_CNA_BED TLEN DISTANCE BOUNDARY_READS_DIR OUTPUT_DIR
     ```
     
  5. Produce edges to connect SVs based on read count matrices.

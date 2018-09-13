@@ -3,7 +3,7 @@ This page shows an example of applying the procedure described in [Episomizer](.
 double minutes on the mini-bam file created by down-sampling on the relapse sample (SJHGG019_S). For the general
 usage information, see [Episomizer](../README.md) home page.
 
-# Set Environment
+## Set Environment
 Set `$EPISOMIZER_HOME` to the cloned directory, add bin path to `$PATH` and enter `$EPISOMIZER_HOME`
 directory.
 ```
@@ -12,7 +12,7 @@ $ export PATH=$EPISOMIZER_HOME/bin:$PATH
 $ cd $EPISOMIZER_HOME
 ```
 
-# Procedure
+## Procedure
 **Step 1:** We used Log2Ratio > 4 based on the [CONSERTING](https://www.nature.com/articles/nmeth.3394) Log2Ratio 
 distribution to determine the highly amplified genomic segments (file `testdata/input/CNA_region_raw_D.bed`). For
 descriptions about all the example input files, see [input](../testdata/input/README.md) page.
@@ -75,3 +75,10 @@ excel file `./testdata/intmd/reviewed_data/edges_review_relapse_rawCNA.xlsx`.
 ```
 $ episomizer composer circ -c ./testdata/intmd/reviewed_data/Reviewed_segments_for_graph_relapse_rawCNA.txt -l ./testdata/intmd/reviewed_data/Reviewed_edges_for_graph_relapse_rawCNA.txt -d ./testdata/output/double_minutes_relapse.txt
 ```
+
+## Notes on the diagnosis sample (SJHGG019)
+We used the same workflow to generate putative edges for the diagnosis sample, but since the sequencing coverage 
+for the diagnosis sample is much choppier, the SCNA segments boundaries are not as accurate as the relapse sample, 
+which influenced the identification of a few SVs. After manual review of the reads and their Blat results, together 
+with the Chromium data, we rescued eight missed SVs. The review process can be viewed 
+at [edges_review_diagnosis_rawCNA.xlsx](../testdata/intmd/reviewed_data/edges_review_diagnosis_rawCNA.xlsx).  

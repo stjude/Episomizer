@@ -33,5 +33,5 @@ for(my $i=1; $i<=$CNA_num; $i++) {
         .$softclip_fa_dir."/seg_".$i."_R_softclip.fa", "\n";
 }
 close OUT1;
-print STDERR "softclip2fa command file was created successfully: ".$output_dir."/run_softclip2fa.sh";
+print STDERR "softclip2fa command file was created successfully: ".$output_dir."/run_softclip2fa.sh\n";
 exit;

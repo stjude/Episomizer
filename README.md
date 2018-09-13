@@ -123,6 +123,11 @@ is 100), the edge is most likely to be spurious.
 $ episomizer composer circ -c REVIEWED_SEGMENTS -l REVIEWED_EDGES -d OUTPUT_DOUBLE_MINUTES
 ```
 
+## Notes
+It's recommended to follow the detailed tutorial in the "examples" folder and use the "testdata" folder to reproduce 
+our findings on the relapse sample from a pediatric HGG patient.  
+
+
 ## Maintainers
 * [Liang Ding](https://github.com/adamdingliang)
 * [Ke Xu](https://github.com/FromSoSimple)

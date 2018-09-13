@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Set environment to run episomizer tests interactively.
 
 # Check for evidence of being sourced
 if [ "${BASH_SOURCE[0]}" == "$0" ]

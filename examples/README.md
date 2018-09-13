@@ -40,7 +40,8 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     $ ./testdata/intmd/trace/run_softclip2fa.sh
     ```
     
-3. Generate the shell script to blat the softclip reads.
+3. Generate the shell script to blat the softclip reads and the intermediate folder (`CNA_boundary_softclip_BLAT`) in
+    the given output directory.
     ```
     $ episomizer create_blat_cmd GRCh37-lite.2bit ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
     ```
@@ -51,3 +52,26 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
     $ ./testdata/intmd/trace/run_BLAT.sh
     ```
+    
+4. Create 3 read count matrices using softclip reads, discordant reads and bridging discordant reads.
+    ```
+    $ episomizer SV_softclip ./testdata/input/CNA_region_raw_R.bed 1000 ./testdata/intmd/trace/CNA_boundary_softclip_BLAT ./testdata/intmd/trace
+    $ episomizer SV_discordant ./testdata/input/CNA_region_raw_R.bed 800 1000 ./testdata/intmd/trace/CNA_boundary_reads ./testdata/intmd/trace
+    $ episomizer SV_bridge ./testdata/input/CNA_region_raw_R.bed 800 1000 ./testdata/intmd/trace/CNA_boundary_reads ./testdata/intmd/trace
+    ```
+    
+5. Produce edges to connect SVs based on read count matrices.
+    ```
+    $ episomizer matrix2edges ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace/matrix_softclip.txt ./testdata/intmd/trace/putative_edges_softclip.txt
+    $ episomizer matrix2edges ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace/matrix_discordant.txt ./testdata/intmd/trace/putative_edges_discordant.txt
+    $ episomizer matrix2edges ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace/matrix_bridge.txt ./testdata/intmd/trace/putative_edges_bridge.txt
+    ```
+ 
+**Step 3:** Manually review the putative edges.
+Please follow the instruction in [Episomizer](../README.md) home page. The review process is summarized in the 
+excel file `./testdata/intmd/reviewed_data/edges_review_relapse_rawCNA.xlsx`.
+
+**Step 4:** Compose circular double minute structures.
+```
+$ episomizer composer circ -c ./testdata/intmd/reviewed_data/Reviewed_segments_for_graph_relapse_rawCNA.txt -l ./testdata/intmd/reviewed_data/Reviewed_edges_for_graph_relapse_rawCNA.txt -d ./testdata/output/double_minutes_relapse.txt
+```

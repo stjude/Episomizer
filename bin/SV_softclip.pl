@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 # This file is part of Episomizer.
-# Author: Ke (Corey) Xu, PhD and Liang (Adam) Ding
+# Author: Ke (Corey) Xu, PhD and Liang (Adam) Ding, PhD
 # Contact: kxu101@gmail.com
 
 use strict;
@@ -82,4 +82,5 @@ foreach my $file (@files) {
 }
 
 close OUT1;
+print STDERR "Read count matrix file was created successfully: ".$output_dir."/matrix_softclip.txt\n";
 exit;

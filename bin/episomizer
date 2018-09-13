@@ -4,7 +4,7 @@
 
 EPISOMIZER_HOME=$(dirname $(dirname $(readlink -f $0)))
 if [ -z "$EPISOMIZER_HOME" ]; then
-    echo "Error: EPISOMIZER_HOME is empty" >&2
+    echo "Error: EPISOMIZER_HOME must be set" >&2
     return 1
     exit 1
 fi
@@ -32,9 +32,11 @@ usage() {
    echo "    create_samtools_cmd    Create samtools command file to extract reads around boundaries of CNA segments"
    echo "    create_softclip2fa_cmd Create command file to extract softclip reads"
    echo "    create_blat_cmd        Create command file to blat softclip reads"
-   echo "    SV_softclip            Create a matrix for softclip reads"
-   echo "    SV_discordant          Create a matrix for discordant reads"
-   echo "    SV_bridge              Create a matrix for bridging discordant reads"
+   echo "    SV_softclip            Create read count matrix using softclip reads"
+   echo "    SV_discordant          Create read count matrix using discordant reads"
+   echo "    SV_bridge              Create read count matrix using bridging discordant reads"
+   echo "    matrix2edges           Produce edges to connect SVs based on read count matrices"
+   echo "    composer               Compose segments and edges to form circular double minute"
    exit 1
 }
 
@@ -53,5 +55,7 @@ case $SUBCOMMAND in
     SV_softclip) ${SUBCOMMAND}.pl ${@:2} ;;
     SV_discordant) ${SUBCOMMAND}.pl ${@:2} ;;
     SV_bridge) ${SUBCOMMAND}.pl ${@:2} ;;
+    matrix2edges) ${SUBCOMMAND}.R ${@:2} ;;
+    composer) ${SUBCOMMAND}.py ${@:2} ;;
     *) usage ;;
 esac

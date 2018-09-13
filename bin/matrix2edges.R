@@ -1,9 +1,8 @@
-#!/hpcf/apps/R/install/intel13/3.0.1/bin/Rscript
+#!/usr/bin/env Rscript
 
-#This file is part of Episomizer.
-
-#Author: Ke (Corey) Xu, PhD
-#Contact: kxu101@gmail.com
+# This file is part of Episomizer.
+# Author: Ke (Corey) Xu, PhD
+# Contact: kxu101@gmail.com
 
 
 args <- commandArgs(trailingOnly=TRUE)
@@ -39,4 +38,3 @@ names(DF) <- c("nodeA", "nodeB", "AtoB", "BtoA", "Total")
 DF <- subset(DF, Total > 0)
 sortedDF <- DF[order(DF$Total, decreasing = T),]
 write.table(sortedDF, args[3], quote=F, sep="\t", row.names=F, col.names=T)   # Output: putative_edges_softclip.txt / putative_edges_discordant.txt / putative_edges_bridge.txt
-

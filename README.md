@@ -40,7 +40,7 @@ Subcommands:
     SV_discordant          Create read count matrix using discordant reads
     SV_bridge              Create read count matrix using bridging discordant reads
     matrix2edges           Produce edges to connect SVs based on read count matrices
-    composer               Compose segments and edges to form circular double minute
+    composer               Compose segments and edges to form circular double minutes
 ```
 For details on how to run the semi-automated pipeline, see the following [Procedure](#Procedure) section. For a
 concrete example of constructing double minutes on a mini-bam, see [examples](./examples/README.md) page.

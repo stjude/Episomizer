@@ -36,7 +36,7 @@ usage() {
    echo "    SV_discordant          Create read count matrix using discordant reads"
    echo "    SV_bridge              Create read count matrix using bridging discordant reads"
    echo "    matrix2edges           Produce edges to connect SVs based on read count matrices"
-   echo "    composer               Compose segments and edges to form circular double minute"
+   echo "    composer               Compose segments and edges to form circular double minutes"
    exit 1
 }
 

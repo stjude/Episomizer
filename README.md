@@ -35,17 +35,17 @@ $ export PATH=$EPISOMIZER_HOME/bin:$PATH
 Usage:
     episomizer <SUBCOMMAND> [args...]
 Subcommands:
-    create_samtools_cmd    Create samtools command file to extract reads around boundaries of CNA segments
+    create_samtools_cmd    Create samtools command file to extract reads around segment boundaries
     create_softclip2fa_cmd Create command file to extract softclip reads
     create_blat_cmd        Create command file to blat softclip reads
-    SV_softclip            Create read count matrix using softclip reads
-    SV_discordant          Create read count matrix using discordant reads
-    SV_bridge              Create read count matrix using bridging discordant reads
-    matrix2edges           Produce edges to connect SVs based on read count matrices
-    composer               Compose segments and edges to form circular double minutes
+    SV_softclip            Create read count matrix for softclip reads supported SVs
+    SV_discordant          Create read count matrix for discordant reads supported SVs
+    SV_bridge              Create read count matrix for bridge reads supported SVs
+    matrix2edges           Convert read count matrix to putative edges
+    composer               Compose segments and edges to identify circular DNA structures
 ```
 For details on how to run the semi-automated pipeline, see the following [Procedure](#Procedure) section. For a
-concrete example of constructing double minutes on a mini-bam, see [examples](./examples/README.md) page.
+concrete example of constructing double minutes on a mini-bam file, see [examples](./examples/README.md) page.
 
 ## Procedure
 **Step 1:** Determine a threshold for highly amplified genomic segments based on the empirical distribution
@@ -122,11 +122,6 @@ is 100), the edge is most likely to be spurious.
 ```
 $ episomizer composer circ -c REVIEWED_SEGMENTS -l REVIEWED_EDGES -d OUTPUT_DOUBLE_MINUTES
 ```
-
-## Notes
-It's recommended to follow the detailed tutorial in the "examples" folder and use the "testdata" folder to reproduce 
-our findings on the relapse sample from a pediatric HGG patient.  
-
 
 ## Maintainers
 * [Liang Ding](https://github.com/adamdingliang)

@@ -21,7 +21,7 @@ descriptions about all the example input files, see [input](../testdata/input/RE
 
 **Step 2:** Get the putative edges.
 1. Generate the shell script with samtools commands and the intermediate folder 
-([CNA_boundary_reads](../testdata/intmd/trace/CNA_boundary_reads)) in 
+([CNA_boundary_reads]) in 
     the given output directory.
     ```
     $ episomizer create_samtools_cmd ./testdata/input/mini_SJHGG019_S.bam ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
@@ -33,7 +33,7 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
     
 2. Generate the shell script to extract softclip reads and the intermediate folder 
-([CNA_boundary_softclip_fa](../testdata/intmd/trace/CNA_boundary_softclip_fa)) in
+([CNA_boundary_softclip_fa]) in
     the given output directory.
     ```
     $ episomizer create_softclip2fa_cmd ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
@@ -44,13 +44,13 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
     
 3. Generate the shell script to blat the softclip reads and the intermediate folder 
-([CNA_boundary_softclip_BLAT](../testdata/intmd/trace/CNA_boundary_softclip_BLAT)) in
+([CNA_boundary_softclip_BLAT]) in
     the given output directory.
     ```
     $ episomizer create_blat_cmd GRCh37-lite.2bit ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
     ```
-    The reference genome GRCh37-lite.2bit can be downloaded from 
-    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit). It should be placed under the working directory.
+    **The reference genome GRCh37-lite.2bit can be downloaded from 
+    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit). It should be placed under the working directory.**
     
     Run the shell script (parallel processing is recommended).
     ```
@@ -64,7 +64,7 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     $ episomizer SV_bridge ./testdata/input/CNA_region_raw_R.bed 800 10000 ./testdata/intmd/trace/CNA_boundary_reads ./testdata/intmd/trace
     ```
     
-5. Produce edges to connect SVs based on read count matrices.
+5. Convert matrix file to edges file.
     ```
     $ episomizer matrix2edges ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace/matrix_softclip.txt ./testdata/intmd/trace/putative_edges_softclip.txt
     $ episomizer matrix2edges ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace/matrix_discordant.txt ./testdata/intmd/trace/putative_edges_discordant.txt
@@ -72,7 +72,7 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
  
 **Step 3:** Manually review the putative edges.
-Please follow the instruction in [Episomizer](../README.md) home page. The review process is summarized in 
+Please follow the instruction in [Episomizer](../README.md) home page. The review process for the relapse sample is summarized in 
 [edges_review_relapse_rawCNA.xlsx](./testdata/intmd/reviewed_data/edges_review_relapse_rawCNA.xlsx).
 
 **Step 4:** Compose circular double minute structures.

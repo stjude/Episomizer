@@ -1,15 +1,13 @@
 # Episomizer
 Episomizer is currently a semi-automated pipeline for constructing double minutes (aka. episome) 
-using WGS data. The challenge to fully automate the entire process lies in the varying 
-complexity of genomic rearrangements and inaccurate boundaries of copy number segments that require 
-manual review.
+using WGS data. 
 
 Episomizer consists of two major components:
 * Bam mining extract the reads around the boundaries of highly amplified genomic regions, 
 search for evidence of soft-clipped reads, discordant reads, and bridge reads that support 
-putative SVs (aka. edges) between any two segment boundaries. The putative edges are then subject 
+putative SVs (aka. edges) between any two segment boundaries. The reported putative edges are subject 
 to manual review. 
-* Composer takes inputs of manually reviewed SVs associated with the segment boundaries together 
+* Composer takes inputs of manually reviewed edges associated with the segment boundaries together 
 with the highly amplified genomic segments, composes the segments to form simple
 cycles as candidates of circular DNA structures.
 
@@ -74,10 +72,10 @@ For details on how to run the semi-automated pipeline, see the following [Proced
     ```
     $ episomizer create_blat_cmd REF_GENOME_BIT INPUT_CNA_BED OUTPUT_DIR
     ```
-    The reference genome GRCh37-lite.2bit can be downloaded from 
-    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit).
+    **The reference genome GRCh37-lite.2bit can be downloaded from 
+    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit) and can be placed under the working directory.**
     
-    Run the shell script (recommend parallel processing).
+    Run the shell script (submitting the jobs in parallel is strongly recommended).
     ```
     $ OUTPUT_DIR/run_BLAT.sh
     ```

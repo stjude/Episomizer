@@ -21,7 +21,7 @@ descriptions about all the example input files, see [input](../testdata/input/RE
 
 **Step 2:** Get the putative edges.
 1. Generate the shell script with samtools commands and the intermediate folder 
-([CNA_boundary_reads]) in 
+(CNA_boundary_reads) in 
     the given output directory.
     ```
     $ episomizer create_samtools_cmd ./testdata/input/mini_SJHGG019_S.bam ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
@@ -33,7 +33,7 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
     
 2. Generate the shell script to extract softclip reads and the intermediate folder 
-([CNA_boundary_softclip_fa]) in
+(CNA_boundary_softclip_fa) in
     the given output directory.
     ```
     $ episomizer create_softclip2fa_cmd ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
@@ -44,15 +44,15 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
     
 3. Generate the shell script to blat the softclip reads and the intermediate folder 
-([CNA_boundary_softclip_BLAT]) in
+(CNA_boundary_softclip_BLAT) in
     the given output directory.
     ```
     $ episomizer create_blat_cmd GRCh37-lite.2bit ./testdata/input/CNA_region_raw_R.bed ./testdata/intmd/trace
     ```
     **The reference genome GRCh37-lite.2bit can be downloaded from 
-    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit). It should be placed under the working directory.**
+    [St. Jude public FTP site](http://ftp.stjude.org/pub/software/cis-x/GRCh37-lite.2bit) and can be placed under the working directory.**
     
-    Run the shell script (parallel processing is recommended).
+    Run the shell script (submitting the jobs in parallel is strongly recommended).
     ```
     $ ./testdata/intmd/trace/run_BLAT.sh
     ```

@@ -73,7 +73,7 @@ descriptions about all the example input files, see [input](../testdata/input/RE
  
 **Step 3:** Manually review the putative edges.
 Please follow the instruction in [Episomizer](../README.md) home page. The review process for the relapse sample is summarized in 
-[edges_review_relapse_rawCNA.xlsx](./testdata/intmd/reviewed_data/edges_review_relapse_rawCNA.xlsx).
+[edges_review_relapse_rawCNA.xlsx](../testdata/intmd/reviewed_data/edges_review_relapse_rawCNA.xlsx).
 
 **Step 4:** Compose circular double minute structures.
 ```

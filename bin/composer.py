@@ -11,6 +11,7 @@ import argparse
 import graph
 import cycle
 import path
+import double_minute
 
 
 def main():
@@ -101,14 +102,15 @@ def find_circular_double_minutes(dg, circ_dm_file):
     print('Finding circular double minutes ...', file=sys.stderr)
     simple_cycles = cycle.find_simple_cycles(dg)
     filtered_simple_cycles = path.filter_jump_paths(simple_cycles)
-    circ_double_minutes = path.rm_reverse_paths(filtered_simple_cycles)
+    double_minutes = cycle.simple_cycles_to_double_minutes(dg, filtered_simple_cycles)
+    deduplicated_simple_cycles = double_minute.rm_reverse_double_minutes(double_minutes)
     with open(circ_dm_file, 'w') as fout:
-        fout.write('Number of circular double minutes: ' + str(len(circ_double_minutes)) + '\n')
-        for index, sc in enumerate(circ_double_minutes):
+        fout.write('Number of circular double minutes: ' + str(len(deduplicated_simple_cycles)) + '\n\n')
+        for index, dm in enumerate(deduplicated_simple_cycles):
             fout.write('Double minute ' + str(index + 1) + ':\n')
-            fout.write(cycle.simple_cycle_to_string(dg, sc) + '\n')
+            fout.write(str(dm) + '\n\n')
     print('Done', file=sys.stderr)
-    return circ_double_minutes
+    return deduplicated_simple_cycles
 
 
 if __name__ == '__main__':

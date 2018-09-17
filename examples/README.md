@@ -25,7 +25,6 @@ descriptions about all the example input files, see [input](../testdata/input/RE
     ```
     $ episomizer create_samtools_cmd ./testdata/input/mini_SJHGG019_S.bam ./testdata/input/CNA_region_raw_D.bed 
     ./testdata/intmd/trace
-    Samtools commands created successfully.
     ```
     Run the shell script.
     ```
@@ -79,6 +78,7 @@ Please follow the instruction in [Episomizer](../README.md) home page. The revie
 ```
 $ episomizer composer circ -c ./testdata/intmd/reviewed_data/Reviewed_segments_for_graph_relapse_rawCNA.txt -l ./testdata/intmd/reviewed_data/Reviewed_edges_for_graph_relapse_rawCNA.txt -d ./testdata/output/double_minutes_relapse.txt
 ```
+The predicted double minutes are in [double_minutes_relapse.txt](../testdata/output/double_minutes_relapse.txt).
 
 ## Notes on the diagnosis sample (SJHGG019)
 We used the same workflow to generate putative edges for the diagnosis sample, but since the sequencing coverage 

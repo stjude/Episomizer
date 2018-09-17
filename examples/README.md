@@ -76,9 +76,9 @@ Please follow the instruction in [Episomizer](../README.md) home page. The revie
 
 **Step 4:** Compose circular double minute structures.
 ```
-$ episomizer composer circ -c ./testdata/intmd/reviewed_data/Reviewed_segments_for_graph_relapse_rawCNA.txt -l ./testdata/intmd/reviewed_data/Reviewed_edges_for_graph_relapse_rawCNA.txt -d ./testdata/output/double_minutes_relapse.txt
+$ episomizer composer circ -c ./testdata/intmd/reviewed_data/Reviewed_segments_for_graph_relapse_rawCNA.bed -l ./testdata/intmd/reviewed_data/Reviewed_edges_for_graph_relapse_rawCNA.txt -d ./testdata/output/double_minutes_relapse.txt
 ```
-The predicted double minutes are in [double_minutes_relapse.txt](../testdata/output/double_minutes_relapse.txt).
+The constructed double minutes are in [double_minutes_relapse.txt](../testdata/output/double_minutes_relapse.txt).
 
 ## Notes on the diagnosis sample (SJHGG019_E)
 We used the same workflow to generate putative edges for the diagnosis sample, but since the sequencing coverage 

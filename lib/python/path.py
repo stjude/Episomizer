@@ -86,6 +86,7 @@ def filter_jump_paths(simple_paths):
     return filter_scs
 
 
+# The logic in note is not reliable. This should be rewritten.
 def rm_reverse_paths(simple_paths):
     """ Remove reverse cycles/paths from a list of cycles/paths.
         Note: Assume a path and its reverse one are next to each other in the input list!

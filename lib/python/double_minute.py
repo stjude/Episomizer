@@ -85,7 +85,8 @@ class DoubleMinute(object):
     def __str__(self):
         temp_lst = []
         for index, edge in enumerate(self.ordered_edges):
-            if (index+1) % 8 == 0:
+            if (index+1) % 7 == 0:
+                temp_lst.append(str(edge))
                 temp_lst.append('\n')
             else:
                 temp_lst.append(str(edge))

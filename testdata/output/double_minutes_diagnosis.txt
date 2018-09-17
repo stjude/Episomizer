@@ -3,411 +3,426 @@ Number of circular double minutes: 52
 Double minute 1:
 Length: 1780865
 Number of segments: 35
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L 
- 19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R  
- 8L  --a--> 7R   7L  --a--> 6R   6L  --a--> 5R   5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R 
- 28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R 
- 43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R 
+ 31L --s--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R 
+ 42L --a--> 41R  41L --a--> 40R  40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L 
+ 16R --s--> 17L  17R --a--> 18L  18R --a--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R   6L  --a--> 5R  
+
 
 
 Double minute 2:
 Length: 1609716
 Number of segments: 30
-30.aL--a--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R 
- 21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R  
  5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
- 12R --a--> 13L  13R --a--> 14L  14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR
+ 26R --s--> 12L  12R --a--> 13L  13R --a--> 14L  14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR
+30.aL--a--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R 
+ 22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R  
+ 7L  --a--> 6R   6L  --a--> 5R  
 
 
 Double minute 3:
 Length: 1592817
 Number of segments: 29
-30.aL--a--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R 
- 21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R  
  5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
- 12R --a--> 13L  13R --s--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR
+ 26R --s--> 12L  12R --a--> 13L  13R --s--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR30.aL--a--> 29R 
+ 29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R 
+ 21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R  
+ 6L  --a--> 5R  
 
 
 Double minute 4:
 Length: 1563270
 Number of segments: 30
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L 
- 19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --s--> 29R 
- 28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R 
- 43L --b--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5R  --a--> 6L   6R  --b--> 40R  40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L 
+ 16R --s--> 17L  17R --a--> 18L  18R --a--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --s--> 26R  26L --s--> 2R   2L  --s--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L 
+ 35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R  
+ 9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 5:
 Length: 1557273
 Number of segments: 27
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L 
- 19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --s--> 29R 
- 28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R 
- 43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 14R --s--> 24L  24R --d--> 19R  19L --a--> 18R  18L --a--> 17R  17L --s--> 16R  16L --s--> 23L  23R --b--> 33L 
+ 33R --s--> 38L  38R --a--> 39L  39R --a--> 40L  40R --a--> 41L  41R --a--> 42L  42R --a--> 43L  43R --a--> 44L 
+ 44R --s--> 21L  21R --a--> 22L  22R --s--> 36R  36L --a--> 35R  35L --s--> 31L  31R --a--> 32L  32R --s--> 28L 
+ 28R --a--> 29L  29R --s--> 2L   2R  --s--> 26L  26R --s--> 12L  12R --a--> 13L  13R --a--> 14L 
 
 
 Double minute 6:
 Length: 1422619
 Number of segments: 27
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL
- 17L --s--> 16R  16L --a--> 15R  15L --a--> 14R  14L --a--> 13R  13L --a--> 12R  12L --s--> 26R  26L --s--> 2R  
- 1L  --c--> 20R  20L --a--> 19R  19L --s--> 25L  25R --s--> 4L   4R  --a--> 5L   5R  --c--> 21R  21L --s--> 44R 
- 43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
+ 26R --s--> 12L  12R --a--> 13L  13R --a--> 14L  14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR
+30.aL--a--> 29R  29L --b--> 35R  35L --s--> 31L  31R --s--> 37L  37R --a--> 38L  38R --a--> 39L  39R --a--> 40L 
+ 40R --a--> 41L  41R --a--> 42L  42R --a--> 43L  43R --a--> 44L  44R --s--> 21L  21R --c--> 5R  
 
 
 Double minute 7:
 Length: 1405720
 Number of segments: 26
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL
- 17L --s--> 16R  16L --a--> 15R  15L --s--> 13R  13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --a--> 1R  
- 20L --a--> 19R  19L --s--> 25L  25R --s--> 4L   4R  --a--> 5L   5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R 
- 42L --a--> 41R  41L --a--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
+ 26R --s--> 12L  12R --a--> 13L  13R --s--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR30.aL--a--> 29R 
+ 29L --b--> 35R  35L --s--> 31L  31R --s--> 37L  37R --a--> 38L  38R --a--> 39L  39R --a--> 40L  40R --a--> 41L 
+ 41R --a--> 42L  42R --a--> 43L  43R --a--> 44L  44R --s--> 21L  21R --c--> 5R  
 
 
 Double minute 8:
 Length: 1392628
 Number of segments: 26
- 12R --a--> 13L  13R --a--> 14L  14R --s--> 24L  24R --d--> 19R  19L --a--> 18R  18L --a--> 17R  17L --s--> 16R 
- 23R --b--> 33L  33R --s--> 38L  38R --s-->30.bL30.bR--a--> 31L  31R --a--> 32L  32R --s--> 28L  28R --a--> 29L 
- 2R  --a--> 3L   3R  --a--> 4L   4R  --a--> 5L   5R  --a--> 6L   6R  --a--> 7L   7R  --a--> 8L   8R  --a--> 9L  
- 10R --a--> 11L  11R --a--> 12L 
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R 
+ 31L --a-->30.bR30.bL--s--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L 
+ 18R --a--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R 
+ 10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R   6L  --a--> 5R  
 
 
 Double minute 9:
 Length: 1349423
 Number of segments: 23
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --d-->30.aR
- 29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R 
- 44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5R  --a--> 6L   6R  --b--> 40R  40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L 
+ 16R --s--> 17L  17R --d-->30.aR30.aL--a--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L 
+ 35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R  
+ 9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 10:
 Length: 1343426
 Number of segments: 20
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --d-->30.aR
- 29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R 
- 44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 16R --s--> 17L  17R --d-->30.aR30.aL--a--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L 
+ 35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R 
+ 41L --a--> 40R  40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L 
 
 
 Double minute 11:
 Length: 1310722
 Number of segments: 24
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R 
- 14L --a--> 13R  13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R 
- 25R --s--> 4L   4R  --a--> 5L   5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R 
-
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
+ 26R --s--> 12L  12R --a--> 13L  13R --a--> 14L  14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR
+30.aL--a--> 29R  29L --b--> 35R  35L --a--> 34R  34L --s--> 40L  40R --a--> 41L  41R --a--> 42L  42R --a--> 43L 
+ 43R --a--> 44L  44R --s--> 21L  21R --c--> 5R  
 
 
 Double minute 12:
 Length: 1293823
 Number of segments: 23
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R 
- 13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R  19L --s--> 25L 
- 4R  --a--> 5L   5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
+ 26R --s--> 12L  12R --a--> 13L  13R --s--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR30.aL--a--> 29R 
+ 29L --b--> 35R  35L --a--> 34R  34L --s--> 40L  40R --a--> 41L  41R --a--> 42L  42R --a--> 43L  43R --a--> 44L 
+ 44R --s--> 21L  21R --c--> 5R  
 
 
 Double minute 13:
 Length: 1238123
 Number of segments: 23
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL
- 17L --s--> 16R  16L --a--> 15R  15L --a--> 14R  14L --a--> 13R  13L --a--> 12R  12L --s--> 26R  26L --s--> 2R  
- 1L  --c--> 20R  20L --a--> 19R  19L --s--> 25L  25R --s--> 4L   4R  --a--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
+ 26R --s--> 12L  12R --a--> 13L  13R --a--> 14L  14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR
+30.aL--a--> 29R  29L --b--> 35R  35L --s--> 31L  31R --s--> 37L  37R --a--> 38L  38R --a--> 39L  39R --a--> 40L 
+ 40R --b--> 6R   6L  --a--> 5R  
 
 
 Double minute 14:
 Length: 1236622
 Number of segments: 24
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL
+ 5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R  40L --a--> 39R 
+ 39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R 
  17L --s--> 16R  16L --a--> 15R  15L --a--> 14R  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R 
- 9L  --s--> 27R  27L --c--> 5L   5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R 
-
+ 10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 15:
 Length: 1221224
 Number of segments: 22
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL
- 17L --s--> 16R  16L --a--> 15R  15L --s--> 13R  13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --a--> 1R  
- 20L --a--> 19R  19L --s--> 25L  25R --s--> 4L   4R  --a--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
+ 26R --s--> 12L  12R --a--> 13L  13R --s--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR30.aL--a--> 29R 
+ 29L --b--> 35R  35L --s--> 31L  31R --s--> 37L  37R --a--> 38L  38R --a--> 39L  39R --a--> 40L  40R --b--> 6R  
+ 6L  --a--> 5R  
 
 
 Double minute 16:
 Length: 1219723
 Number of segments: 23
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL
+ 5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R  40L --a--> 39R 
+ 39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R 
  17L --s--> 16R  16L --a--> 15R  15L --s--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R  
- 27L --c--> 5L   5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 17:
 Length: 1195375
 Number of segments: 25
- 12R --a--> 13L  13R --a--> 14L  14R --s--> 24L  24R --d--> 19R  19L --s--> 25L  25R --s--> 4L   4R  --a--> 5L  
- 6R  --a--> 7L   7R  --a--> 8L   8R  --a--> 9L   9R  --a--> 10L  10R --b--> 43L  43R --a--> 44L  44R --s--> 21L 
- 22R --s--> 36R  36L --a--> 35R  35L --s--> 31L  31R --a--> 32L  32R --s--> 28L  28R --a--> 29L  29R --s--> 2L  
- 26R --s--> 12L 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --s--> 26R  26L --s--> 2R   2L  --s--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L 
+ 35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R  
+ 9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R   6L  --a--> 5R  
 
 
 Double minute 18:
 Length: 1169036
 Number of segments: 18
- 12R --a--> 13L  13R --a--> 14L  14R --s--> 24L  24R --d--> 19R  19L --a--> 18R  18L --a--> 17R  17L --s--> 16R 
- 23R --b--> 33L  33R --s--> 38L  38R --s-->30.bL30.bR--a--> 31L  31R --a--> 32L  32R --s--> 28L  28R --a--> 29L 
- 2R  --s--> 26L  26R --s--> 12L 
+ 14R --s--> 24L  24R --d--> 19R  19L --a--> 18R  18L --a--> 17R  17L --s--> 16R  16L --s--> 23L  23R --b--> 33L 
+ 33R --s--> 38L  38R --s-->30.bL30.bR--a--> 31L  31R --a--> 32L  32R --s--> 28L  28R --a--> 29L  29R --s--> 2L  
+ 2R  --s--> 26L  26R --s--> 12L  12R --a--> 13L  13R --a--> 14L 
 
 
 Double minute 19:
 Length: 1126226
 Number of segments: 20
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R 
- 14L --a--> 13R  13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R 
- 25R --s--> 4L   4R  --a--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
+ 26R --s--> 12L  12R --a--> 13L  13R --a--> 14L  14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR
+30.aL--a--> 29R  29L --b--> 35R  35L --a--> 34R  34L --s--> 40L  40R --b--> 6R   6L  --a--> 5R  
 
 
 Double minute 20:
 Length: 1124725
 Number of segments: 21
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R 
+ 5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R  40L --s--> 34L 
+ 34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R  15L --a--> 14R 
  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
- 21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+
 
 
 Double minute 21:
 Length: 1109327
 Number of segments: 19
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R 
- 13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R  19L --s--> 25L 
- 4R  --a--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L 
+ 26R --s--> 12L  12R --a--> 13L  13R --s--> 15L  15R --a--> 16L  16R --s--> 17L  17R --d-->30.aR30.aL--a--> 29R 
+ 29L --b--> 35R  35L --a--> 34R  34L --s--> 40L  40R --b--> 6R   6L  --a--> 5R  
 
 
 Double minute 22:
 Length: 1107826
 Number of segments: 20
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R 
- 13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L   5R  --c--> 21R 
- 44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R  40L --s--> 34L 
+ 34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R  15L --s--> 13R 
+ 13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 23:
 Length: 1052126
 Number of segments: 20
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL
- 17L --s--> 16R  16L --a--> 15R  15L --a--> 14R  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R 
- 9L  --s--> 27R  27L --c--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5R  --a--> 6L   6R  --b--> 40R  40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L 
+ 35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R  15L --a--> 14R  14L --a--> 13R 
+ 13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 24:
 Length: 1035227
 Number of segments: 19
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --a-->30.aL
- 17L --s--> 16R  16L --a--> 15R  15L --s--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R  
- 27L --c--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5R  --a--> 6L   6R  --b--> 40R  40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L 
+ 35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R  15L --s--> 13R  13L --a--> 12R 
+ 12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 25:
 Length: 1013481
 Number of segments: 19
- 4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --s--> 35L 
- 36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --a--> 8R  
- 7L  --a--> 6R   6L  --a--> 5R   5L  --a--> 4R  
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R 
+ 31L --s--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --b--> 10R 
+ 10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R   6L  --a--> 5R  
 
 
 Double minute 26:
 Length: 1008278
 Number of segments: 22
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --s--> 2L  
- 26R --s--> 12L  12R --a--> 13L  13R --a--> 14L  14R --s--> 24L  24R --d--> 19R  19L --s--> 25L  25R --s--> 4L  
- 5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --s--> 26R  26L --s--> 2R   2L  --s--> 29R  29L --b--> 35R  35L --s--> 31L  31R --s--> 37L  37R --a--> 38L 
+ 38R --a--> 39L  39R --a--> 40L  40R --a--> 41L  41R --a--> 42L  42R --a--> 43L  43R --a--> 44L  44R --s--> 21L 
+ 21R --c--> 5R  
 
 
 Double minute 27:
 Length: 961980
 Number of segments: 20
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L 
- 19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --a--> 3L   3R  --a--> 4L   4R  --a--> 5L   5R  --c--> 21R 
- 44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R  19L --a--> 18R 
+ 18L --a--> 17R  17L --s--> 16R  16L --s--> 23L  23R --b--> 33L  33R --s--> 38L  38R --a--> 39L  39R --a--> 40L 
+ 40R --a--> 41L  41R --a--> 42L  42R --a--> 43L  43R --a--> 44L  44R --s--> 21L  21R --c--> 5R  
 
 
 Double minute 28:
 Length: 957877
 Number of segments: 23
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L 
+ 5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R  40L --a--> 39R 
+ 39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L  18R --a--> 19L 
  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R  
- 27L --c--> 5L   5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 29:
 Length: 955189
 Number of segments: 11
-30.aL--a--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --a-->30.bR30.bL--s--> 38R  38L --s--> 33R 
- 23L --s--> 16L  16R --s--> 17L  17R --d-->30.aR
+ 16R --s--> 17L  17R --d-->30.aR30.aL--a--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --a-->30.bR
+30.bL--s--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L 
 
 
 Double minute 30:
 Length: 940229
 Number of segments: 17
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R 
- 14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
- 6R  --b--> 40R 
+ 5R  --a--> 6L   6R  --b--> 40R  40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R 
+ 17L --s--> 16R  16L --a--> 15R  15L --a--> 14R  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R 
+ 10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 31:
 Length: 923330
 Number of segments: 16
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R  17L --s--> 16R  16L --a--> 15R 
- 13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L   5R  --a--> 6L  
-
+ 5R  --a--> 6L   6R  --b--> 40R  40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --a-->30.aL30.aR--d--> 17R 
+ 17L --s--> 16R  16L --a--> 15R  15L --s--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R  
+ 9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 32:
 Length: 896381
 Number of segments: 19
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --s--> 2L   2R  --s--> 26L  26R --s--> 12L  12R --a--> 13L 
- 14R --s--> 24L  24R --d--> 19R  19L --s--> 25L  25R --s--> 4L   4R  --a--> 5L   5R  --c--> 21R  21L --s--> 44R 
- 43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --s--> 26R  26L --s--> 2R   2L  --s--> 29R  29L --b--> 35R  35L --a--> 34R  34L --s--> 40L  40R --a--> 41L 
+ 41R --a--> 42L  42R --a--> 43L  43R --a--> 44L  44R --s--> 21L  21R --c--> 5R  
 
 
 Double minute 33:
 Length: 851780
 Number of segments: 20
- 12R --a--> 13L  13R --a--> 14L  14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --a--> 18L  18R --a--> 19L 
- 20R --c--> 1L   1R  --a--> 2L   2R  --a--> 3L   3R  --a--> 4L   4R  --a--> 5L   5R  --a--> 6L   6R  --a--> 7L  
- 8R  --a--> 9L   9R  --a--> 10L  10R --a--> 11L  11R --a--> 12L 
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R  19L --a--> 18R 
+ 18L --a--> 17R  17L --s--> 16R  16L --a--> 15R  15L --a--> 14R  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R 
+ 11L --a--> 10R  10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R   6L  --a--> 5R  
 
 
 Double minute 34:
 Length: 834881
 Number of segments: 19
- 12R --a--> 13L  13R --s--> 15L  15R --a--> 16L  16R --s--> 17L  17R --a--> 18L  18R --a--> 19L  19R --a--> 20L 
- 1R  --a--> 2L   2R  --a--> 3L   3R  --a--> 4L   4R  --a--> 5L   5R  --a--> 6L   6R  --a--> 7L   7R  --a--> 8L  
- 9R  --a--> 10L  10R --a--> 11L  11R --a--> 12L 
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R  19L --a--> 18R 
+ 18L --a--> 17R  17L --s--> 16R  16L --a--> 15R  15L --s--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R 
+ 10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R   6L  --a--> 5R  
 
 
 Double minute 35:
 Length: 826384
 Number of segments: 16
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --s--> 2L  
- 3R  --a--> 4L   4R  --a--> 5L   5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R 
-
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R  29L --b--> 35R  35L --s--> 31L  31R --s--> 37L 
+ 37R --a--> 38L  38R --a--> 39L  39R --a--> 40L  40R --a--> 41L  41R --a--> 42L  42R --a--> 43L  43R --a--> 44L 
+ 44R --s--> 21L  21R --c--> 5R  
 
 
 Double minute 36:
 Length: 823782
 Number of segments: 18
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --s--> 2L  
- 26R --s--> 12L  12R --a--> 13L  13R --a--> 14L  14R --s--> 24L  24R --d--> 19R  19L --s--> 25L  25R --s--> 4L  
- 5R  --a--> 6L   6R  --b--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --s--> 26R  26L --s--> 2R   2L  --s--> 29R  29L --b--> 35R  35L --s--> 31L  31R --s--> 37L  37R --a--> 38L 
+ 38R --a--> 39L  39R --a--> 40L  40R --b--> 6R   6L  --a--> 5R  
 
 
 Double minute 37:
 Length: 777484
 Number of segments: 16
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L 
- 19R --a--> 20L  20R --c--> 1L   1R  --a--> 2L   2R  --a--> 3L   3R  --a--> 4L   4R  --a--> 5L   5R  --a--> 6L  
-
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R  19L --a--> 18R 
+ 18L --a--> 17R  17L --s--> 16R  16L --s--> 23L  23R --b--> 33L  33R --s--> 38L  38R --a--> 39L  39R --a--> 40L 
+ 40R --b--> 6R   6L  --a--> 5R  
 
 
 Double minute 38:
 Length: 773381
 Number of segments: 19
- 40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L  16R --s--> 17L  17R --a--> 18L 
- 19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R  12L --a--> 11R  11L --a--> 10R  10L --a--> 9R  
- 27L --c--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5R  --a--> 6L   6R  --b--> 40R  40L --a--> 39R  39L --a--> 38R  38L --s--> 33R  33L --b--> 23R  23L --s--> 16L 
+ 16R --s--> 17L  17R --a--> 18L  18R --a--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 39:
 Length: 714487
 Number of segments: 13
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --s--> 2L   2R  --a--> 3L   3R  --a--> 4L   4R  --a--> 5L  
- 21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R  29L --b--> 35R  35L --a--> 34R  34L --s--> 40L 
+ 40R --a--> 41L  41R --a--> 42L  42R --a--> 43L  43R --a--> 44L  44R --s--> 21L  21R --c--> 5R  
 
 
 Double minute 40:
 Length: 711885
 Number of segments: 15
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --s--> 2L   2R  --s--> 26L  26R --s--> 12L  12R --a--> 13L 
- 14R --s--> 24L  24R --d--> 19R  19L --s--> 25L  25R --s--> 4L   4R  --a--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --s--> 26R  26L --s--> 2R   2L  --s--> 29R  29L --b--> 35R  35L --a--> 34R  34L --s--> 40L  40R --b--> 6R  
+ 6L  --a--> 5R  
 
 
 Double minute 41:
 Length: 704284
 Number of segments: 16
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R 
- 21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L   5R  --a--> 6L  
-
+ 5R  --a--> 6L   6R  --b--> 40R  40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L 
+ 35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R  
+ 9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 42:
 Length: 698287
 Number of segments: 13
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --a--> 36L  36R --s--> 22R 
- 21L --s--> 44R  44L --a--> 43R  43L --a--> 42R  42L --a--> 41R  41L --a--> 40R 
+ 21R --a--> 22L  22R --s--> 36R  36L --a--> 35R  35L --s--> 31L  31R --s--> 37L  37R --a--> 38L  38R --a--> 39L 
+ 39R --a--> 40L  40R --a--> 41L  41R --a--> 42L  42R --a--> 43L  43R --a--> 44L  44R --s--> 21L 
 
 
 Double minute 43:
 Length: 641888
 Number of segments: 12
- 40L --a--> 39R  39L --a--> 38R  38L --a--> 37R  37L --s--> 31R  31L --s--> 35L  35R --b--> 29L  29R --s--> 2L  
- 3R  --a--> 4L   4R  --a--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R  29L --b--> 35R  35L --s--> 31L  31R --s--> 37L 
+ 37R --a--> 38L  38R --a--> 39L  39R --a--> 40L  40R --b--> 6R   6L  --a--> 5R  
 
 
 Double minute 44:
 Length: 639994
 Number of segments: 6
-30.aL--a--> 29R  29L --a--> 28R  28L --s--> 32R  32L --a--> 31R  31L --a-->30.bR30.bL--a-->30.aR
+ 28L --s--> 32R  32L --a--> 31R  31L --a-->30.bR30.bL--a-->30.aR30.aL--a--> 29R  29L --a--> 28R 
 
 
 Double minute 45:
 Length: 628188
 Number of segments: 12
- 12R --a--> 13L  13R --a--> 14L  14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --a--> 18L  18R --a--> 19L 
- 20R --c--> 1L   1R  --a--> 2L   2R  --s--> 26L  26R --s--> 12L 
+ 14R --a--> 15L  15R --a--> 16L  16R --s--> 17L  17R --a--> 18L  18R --a--> 19L  19R --a--> 20L  20R --c--> 1L  
+ 1R  --a--> 2L   2R  --s--> 26L  26R --s--> 12L  12R --a--> 13L  13R --a--> 14L 
 
 
 Double minute 46:
 Length: 611289
 Number of segments: 11
- 12R --a--> 13L  13R --s--> 15L  15R --a--> 16L  16R --s--> 17L  17R --a--> 18L  18R --a--> 19L  19R --a--> 20L 
- 1R  --a--> 2L   2R  --s--> 26L  26R --s--> 12L 
+ 13L --a--> 12R  12L --s--> 26R  26L --s--> 2R   2L  --a--> 1R   1L  --c--> 20R  20L --a--> 19R  19L --a--> 18R 
+ 18L --a--> 17R  17L --s--> 16R  16L --a--> 15R  15L --s--> 13R 
 
 
 Double minute 47:
 Length: 592387
 Number of segments: 13
- 40L --s--> 34L  34R --a--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R 
- 10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L   5R  --a--> 6L   6R  --b--> 40R 
+ 5R  --a--> 6L   6R  --b--> 40R  40L --s--> 34L  34R --a--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R 
+ 21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
 
 
 Double minute 48:
 Length: 586390
 Number of segments: 10
- 40L --s--> 34L  34R --a--> 35L  35R --a--> 36L  36R --s--> 22R  22L --a--> 21R  21L --s--> 44R  44L --a--> 43R 
- 42L --a--> 41R  41L --a--> 40R 
+ 21R --a--> 22L  22R --s--> 36R  36L --a--> 35R  35L --a--> 34R  34L --s--> 40L  40R --a--> 41L  41R --a--> 42L 
+ 42R --a--> 43L  43R --a--> 44L  44R --s--> 21L 
 
 
 Double minute 49:
 Length: 529991
 Number of segments: 9
- 40L --s--> 34L  34R --a--> 35L  35R --b--> 29L  29R --s--> 2L   2R  --a--> 3L   3R  --a--> 4L   4R  --a--> 5L  
- 6R  --b--> 40R 
+ 5L  --a--> 4R   4L  --a--> 3R   3L  --a--> 2R   2L  --s--> 29R  29L --b--> 35R  35L --a--> 34R  34L --s--> 40L 
+ 40R --b--> 6R   6L  --a--> 5R  
 
 
 Double minute 50:
 Length: 405486
 Number of segments: 14
- 12R --a--> 13L  13R --a--> 14L  14R --s--> 24L  24R --d--> 19R  19L --s--> 25L  25R --s--> 4L   4R  --a--> 5L  
- 6R  --a--> 7L   7R  --a--> 8L   8R  --a--> 9L   9R  --a--> 10L  10R --a--> 11L  11R --a--> 12L 
+ 5L  --a--> 4R   4L  --s--> 25R  25L --s--> 19L  19R --d--> 24R  24L --s--> 14R  14L --a--> 13R  13L --a--> 12R 
+ 12L --a--> 11R  11L --a--> 10R  10L --a--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --a--> 6R   6L  --a--> 5R  
+
 
 
 Double minute 51:
 Length: 310050
 Number of segments: 4
- 37L --s--> 31R  31L --a-->30.bR30.bL--s--> 38R  38L --a--> 37R 
+ 38L --a--> 37R  37L --s--> 31R  31L --a-->30.bR30.bL--s--> 38R 
 
 
 Double minute 52:
 Length: 190493
 Number of segments: 7
- 21R --c--> 5R   5L  --c--> 27L  27R --s--> 9L   9R  --a--> 10L  10R --b--> 43L  43R --a--> 44L  44R --s--> 21L 
+ 5R  --c--> 21R  21L --s--> 44R  44L --a--> 43R  43L --b--> 10R  10L --a--> 9R   9L  --s--> 27R  27L --c--> 5L  
+
 
 

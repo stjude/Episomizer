@@ -60,7 +60,7 @@ def build_graph(cna_segment_file, linked_sv_file, **kwargs):
                 tokens = line.split('\t')
                 segment = tokens[0]
                 log_ratio = float(tokens[2])
-                length = int(tokens[3])
+                #length = int(tokens[3])
                 dg[segment + 'L'][segment + 'R']['LogRatio'] = log_ratio
                 dg[segment + 'R'][segment + 'L']['LogRatio'] = log_ratio
     return dg

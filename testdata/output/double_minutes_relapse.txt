@@ -1,29 +1,50 @@
 Number of circular double minutes: 7
+
 Double minute 1:
-7L -b-> 6LR -s-> 3RL -s-> 1RL -s-> 2LR -s-> 12RL -a-> 11RL -s-> 4LR -a-> 5LR -s-> 14LR -a-> 15LR -a-> 16LR -d-> 24LR -a-> 25LR -d-> 28LR -a-> 29LR -s-> 20RL -a-> 19RL -s-> 9RL -a-> 8RL -a-> 7R
 Length: 1887780
+Number of segments: 20
+ 20L --a--> 19R  19L --s--> 9R   9L  --a--> 8R   8L  --a--> 7R   7L  --b--> 6L   6R  --s--> 3R   3L  --s--> 1R  
+ 1L  --s--> 2L   2R  --s--> 12R  12L --a--> 11R  11L --s--> 4L   4R  --a--> 5L   5R  --s--> 14L  14R --a--> 15L 
+ 15R --a--> 16L  16R --d--> 24L  24R --a--> 25L  25R --d--> 28L  28R --a--> 29L  29R --s--> 20R 
+
 
 Double minute 2:
-7L -b-> 6LR -s-> 3RL -s-> 1RL -s-> 2LR -s-> 12RL -a-> 11RL -s-> 4LR -a-> 5LR -s-> 14LR -s-> 10RL -a-> 9RL -a-> 8RL -a-> 7R
-Length: 719287
+Length: 973991
+Number of segments: 9
+ 20L --a--> 19R  19L --s--> 9R   9L  --s--> 27R  27L --s--> 16L  16R --d--> 24L  24R --a--> 25L  25R --d--> 28L 
+ 28R --a--> 29L  29R --s--> 20R 
+
 
 Double minute 3:
-21L -a-> 20RL -a-> 19RL -s-> 9RL -s-> 27RL -a-> 26RL -a-> 25RL -a-> 24RL -a-> 23RL -a-> 22RL -a-> 21R
 Length: 932290
+Number of segments: 10
+ 20L --a--> 19R  19L --s--> 9R   9L  --s--> 27R  27L --a--> 26R  26L --a--> 25R  25L --a--> 24R  24L --a--> 23R 
+ 23L --a--> 22R  22L --a--> 21R  21L --a--> 20R 
+
 
 Double minute 4:
-27R -s-> 9LR -s-> 19LR -a-> 20LR -s-> 29RL -a-> 28RL -d-> 25RL -a-> 24RL -d-> 16RL -s-> 27L
-Length: 973991
+Length: 851694
+Number of segments: 6
+ 18L --s--> 17R  17L --a--> 16R  16L --a--> 15R  15L --a--> 14R  14L --a--> 13R  13L --c--> 18R 
+
 
 Double minute 5:
-10R -s-> 14RL -a-> 13RL -c-> 18RL -s-> 17RL -a-> 16RL -s-> 27LR -s-> 9LR -a-> 10L
-Length: 657192
+Length: 719287
+Number of segments: 13
+ 6L  --b--> 7L   7R  --a--> 8L   8R  --a--> 9L   9R  --a--> 10L  10R --s--> 14R  14L --s--> 5R   5L  --a--> 4R  
+ 4L  --s--> 11L  11R --a--> 12L  12R --s--> 2R   2L  --s--> 1L   1R  --s--> 3L   3R  --s--> 6R  
+
 
 Double minute 6:
-15L -a-> 14RL -a-> 13RL -c-> 18RL -s-> 17RL -a-> 16RL -a-> 15R
-Length: 851694
+Length: 657192
+Number of segments: 8
+ 18L --s--> 17R  17L --a--> 16R  16L --s--> 27L  27R --s--> 9L   9R  --a--> 10L  10R --s--> 14R  14L --a--> 13R 
+ 13L --c--> 18R 
+
 
 Double minute 7:
-27R -s-> 9LR -s-> 19LR -s-> 22RL -s-> 25LR -a-> 26LR -a-> 27L
 Length: 403194
+Number of segments: 6
+ 25L --s--> 22L  22R --s--> 19R  19L --s--> 9R   9L  --s--> 27R  27L --a--> 26R  26L --a--> 25R 
+
 

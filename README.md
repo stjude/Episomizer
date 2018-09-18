@@ -16,13 +16,12 @@ cycles as candidates of circular DNA structures.
 * [R=3.0.1](https://www.r-project.org/)
 * [Samtools=1.7](http://samtools.sourceforge.net/)
 * [blat=36](https://genome.ucsc.edu/FAQ/FAQblat)
-* [Python=3.6](https://www.python.org/downloads/release/python-360/)
-* [NetworkX=2.1](https://networkx.github.io/)
-* [pybedtools=0.7.10](https://daler.github.io/pybedtools/#getting-started)
+* [Python>=3.5.2](https://www.python.org/downloads/release/python-360/)
+    * [NetworkX=2.1](https://networkx.github.io/)
+    * [pybedtools>=0.7.0](https://daler.github.io/pybedtools/#getting-started)
 
 ## Installation
-Installation is simply cloning of the repository to a working directory and 
-adding `$EPISOMIZER_HOME/bin` to `$PATH`.
+To install, simply clone of the repository to a working directory and add `$EPISOMIZER_HOME/bin` to `$PATH`.
 ```
 $ EPISOMIZER_HOME=<path_to_working_dir>
 $ export PATH=$EPISOMIZER_HOME/bin:$PATH

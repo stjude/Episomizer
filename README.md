@@ -11,6 +11,13 @@ to manual review.
 with the highly amplified genomic segments, composes the segments to form simple
 cycles as candidates of circular DNA structures.
 
+## Citation
+Xu, K., Ding, L., Chang, TC., Shao, Y., Chiang, J., Mulder, H., Wang, S., Shaw, T.I., Wen, J., 
+Hover, L., McLeod, C., Wang, YD., Easton, J., Rusch, M., Dalton, J., Downing, J.R., Ellison, D.W., 
+Zhang, J., Baker, S.J., Wu, G.
+Structure and evolution of double minutes in diagnosis and relapse brain tumors.
+Acta Neuropathologica, Sep 2018, DOI: [10.1007/s00401-018-1912-1](https://doi.org/10.1007/s00401-018-1912-1).
+
 ## Prerequisites
 * [Perl=5.10.1](https://www.perl.org/)
 * [R=3.0.1](https://www.r-project.org/)
